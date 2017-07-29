@@ -29,7 +29,6 @@ module.exports = StyleSheet.create({
     fontWeight: 'bold',
   },
   binsRow: {
-    flex: 1,
     flexDirection: 'row',
     margin: 10,
   },
@@ -48,5 +47,6 @@ module.exports = StyleSheet.create({
   throwButton: {
     paddingTop: 10,
     flex: 1,
+    
   }
 });
