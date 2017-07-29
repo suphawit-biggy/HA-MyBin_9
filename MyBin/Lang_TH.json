@@ -1,15 +1,15 @@
 {
   "main": {
     "text": {
-      "bin": "Bin",
-      "general": "General",
-      "recycle": "Recycle",
-      "compostable": "Compostable",
-      "hazadous": "Hazadous"
+      "bin": "ถังขยะ",
+      "general": "ทั่วไป",
+      "recycle": "รีไซเคิล",
+      "compostable": "ย่อยสลายได้",
+      "hazadous": "เป็นพิษ"
     },
     "button": {
-      "info": "Info",
-      "throw": "Throw!"
+      "info": "ช้อมูล",
+      "throw": "ขว้าง!"
     }
   },
   "throw": {
