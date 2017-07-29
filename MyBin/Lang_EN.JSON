@@ -1,0 +1,30 @@
+{
+  "main": {
+    "Text": {
+      "bin": "Bin",
+      "general": "General",
+      "recycle": "Recycle",
+      "compostable": "Compostable",
+      "hazadous": "Hazadous"
+    },
+    "button": {
+      "info": "Info",
+      "throw": "Throw!"
+    }
+  },
+  "throw": {
+    "button": {
+      "throwIt": "Throw It!!"
+    }
+  },
+  "comfirmPopUp": {
+    "Text": {
+      "comfirmation": "Confirmation",
+      "ruSure": "Are you sure to throw this stuff?"
+    },
+    "button": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  }
+}
