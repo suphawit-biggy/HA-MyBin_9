@@ -8,14 +8,45 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+  languageRow: {
+      flexDirection: 'row',
+  },
+  language: {
+    flex: 1,
+    alignItems: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  languageButton: {
+
   },
+  text: {
+    fontFamily: 'Arial',
+    fontSize: 14
+  },
+  titleText: {
+    fontFamily: 'Arial',
+    fontSize: 28,
+    fontWeight: 'bold',
+  },
+  binsRow: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 10,
+  },
+  bin: {
+    flex: 1,
+    margin: 2,
+    alignItems: 'center',
+  },
+  imgBin: {
+    width: 60, 
+    height: 110,
+  },
+  infoButton: {
+    
+  },
+  throwButton: {
+    paddingTop: 10,
+    flex: 1,
+  }
 });
