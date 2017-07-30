@@ -58,5 +58,5 @@ module.exports = StyleSheet.create({
     paddingTop: 10,
     flex: 1,
     
-  }
+  },
 });

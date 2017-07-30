@@ -114,7 +114,7 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/g.png')}
+              source={require('./images/bin/general.png')}
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
@@ -127,7 +127,7 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/b.png')}
+              source={require('./images/bin/recycle.png')}
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
@@ -140,7 +140,7 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/y.png')}
+              source={require('./images/bin/compostable.png')}
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
@@ -153,7 +153,7 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/r.png')}
+              source={require('./images/bin/hazadous.png')}
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}

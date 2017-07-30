@@ -14,6 +14,40 @@ import TH from './Lang_TH.json';
 var styles = require('./styles');
 
 var langCode ='@MyBin:Lang'
+
+var BinImg = React.createClass({
+  render() {
+    if(this.props.name == 'general'){
+      return(
+        <Image
+          style={styles.imgBin}
+          source={require('./images/bin/general.png')}
+        />
+      )
+    }else if(this.props.name == 'recycle'){
+      return(
+        <Image
+          style={styles.imgBin}
+          source={require('./images/bin/recycle.png')}
+        />
+      )
+    }else if(this.props.name == 'compostable'){
+      return(
+        <Image
+          style={styles.imgBin}
+          source={require('./images/bin/compostable.png')}
+        />
+      )
+    }else{
+      return(
+        <Image
+          style={styles.imgBin}
+          source={require('./images/bin/hazadous.png')}
+        />
+      )
+    }
+  }
+})
 export default class BinInfo extends Component {
   constructor(){
     super()
@@ -75,6 +109,9 @@ export default class BinInfo extends Component {
               {this._getName()}
             </Text>
           </View>
+        </View>
+        <View>
+          <BinImg name={this.props.name}/>
         </View>
       </View>
     )
