@@ -10,18 +10,28 @@ module.exports = StyleSheet.create({
   },
   languageRow: {
       flexDirection: 'row',
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      justifyContent: 'space-between',
   },
   language: {
-    flex: 1,
-    alignItems: 'center',
-    margin: 10,
+    alignItems:'flex-end',
+    margin: 5
   },
   languageButton: {
-
   },
   text: {
     fontFamily: 'Arial',
     fontSize: 14
+  },
+  TitleRow: {
+    flex:1,
+    alignItems:'flex-start',
+    paddingLeft:10
+  },
+  topTitleText: {
+    fontFamily: 'Arial',
+    fontSize: 28,
+    color:'white'
   },
   titleText: {
     fontFamily: 'Arial',

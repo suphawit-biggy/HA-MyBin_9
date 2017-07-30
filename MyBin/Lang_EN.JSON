@@ -1,4 +1,9 @@
 {
+  "topBar":{
+    "text":{
+      "main": "main"
+    }
+  },
   "main": {
     "text": {
       "bin": "Bin",

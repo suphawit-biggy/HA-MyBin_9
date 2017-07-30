@@ -1,0 +1,84 @@
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Image,
+  AsyncStorage,
+  Modal
+} from 'react-native';
+import EN from './Lang_EN.json';
+import TH from './Lang_TH.json';
+var styles = require('./styles');
+
+var langCode ='@MyBin:Lang'
+export default class BinInfo extends Component {
+  constructor(){
+    super()
+    this._start()
+    this.state = {
+      EN: true,
+      lang: EN,
+      visible: false,
+    }
+    this._start = this._start.bind(this)
+  }
+
+  async _start(){
+     const value = await AsyncStorage.getItem(langCode)
+     if (value !== null){
+       if(value =='1'){
+         this.setState({
+           EN:false,
+           lang:EN
+         })
+       }else{
+         this.setState({
+           EN:true,
+           lang:TH
+         })
+       }
+     }
+    var temp = this.props.visible
+    this.setState({
+      visible: temp
+    })
+  }
+
+  _getName(){
+    if(this.props.name == 'general'){
+      return(
+        <Text>{this.state.lang.main.text.general}</Text>
+      )
+    }else if(this.props.name == 'recycle'){
+      return(
+        <Text>{this.state.lang.main.text.recycle}</Text>
+      )
+    }else if(this.props.name == 'compostable'){
+      return(
+        <Text>{this.state.lang.main.text.compostable}</Text>
+      )
+    }else if(this.props.name == 'hazadous'){
+      return(
+        <Text>{this.state.lang.main.text.hazadous}</Text>
+      )
+    }
+  }
+  render() {
+    return (
+      <View>
+        <View style={styles.languageRow}>
+          <View style={styles.TitleRow}>
+            <Text style={styles.topTitleText}>
+              {this._getName()}
+            </Text>
+          </View>
+        </View>
+      </View>
+    )
+  }
+}
+
+module.exports = BinInfo;

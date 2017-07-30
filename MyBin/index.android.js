@@ -1,5 +1,7 @@
-var React = require('react-native');
-var {AppRegistry} = React;
+import React, { Component } from 'react';
+import {
+  AppRegistry
+} from 'react-native';
+import Main from './Main';
 
-var MyBin = require('./main');
-AppRegistry.registerComponent('MyBin', () => MyBin)
+AppRegistry.registerComponent('MyBin', () => Main)
