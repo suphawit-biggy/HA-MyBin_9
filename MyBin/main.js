@@ -34,9 +34,22 @@ export default class Main extends Component {
     this._changeLang = this._changeLang.bind(this)
     this._start = this._start.bind(this)
     this._showBinInfo = this._showBinInfo.bind(this)
+    this._updateBinInfo = this._updateBinInfo.bind(this)
 
   }
-
+  _updateBinInfo(){
+    fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
+    .then((response) => response.json())
+    .then((responseJSON) => {
+      this.setState({
+        general: responseJSON.data.bin_statistics.general,
+        recycle: responseJSON.data.bin_statistics.recycle,
+        compostable: responseJSON.data.bin_statistics.compostable,
+        hazardous: responseJSON.data.bin_statistics.hazardous,
+      })
+    })
+    .catch((error) => alert(error.message))
+  }
   async _start(){
      const value = await AsyncStorage.getItem(langCode)
      if (value !== null){
@@ -189,7 +202,9 @@ export default class Main extends Component {
         
 
         <Modal visible={this.state.binInfo} 
-          onRequestClose={() => {this.setState({binInfo:false})}}
+          onRequestClose={() => {
+            this.setState({binInfo:false})
+            this._updateBinInfo()}}
           animationType={"slide"}
           >
           <BinInfo
