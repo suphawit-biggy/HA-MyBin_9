@@ -144,7 +144,6 @@ var ItemList = React.createClass({
           drugs: responseJSON.data.waste_statistics.drugs,
           artistsMaterials: responseJSON.data.waste_statistics.artistsMaterials,
           cosmetics: responseJSON.data.waste_statistics.cosmetics,
-
         })
       })
       .catch((error) => alert(error.message))
