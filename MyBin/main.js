@@ -23,17 +23,13 @@ export default class Main extends Component {
     this.state = {
       EN: true,
       lang: EN,
-      general:false,
-      recycle:false,
-      compostable:false,
-      hazadous:false,
+      binInfo:false,
+      binInfoName:'',
     }
     this._changeLang = this._changeLang.bind(this)
     this._start = this._start.bind(this)
-    this._showGeneral = this._showGeneral.bind(this)
-    this._showRecycle = this._showRecycle.bind(this)
-    this._showCompostable = this._showCompostable.bind(this)
-    this._showHazadous = this._showHazadous.bind(this)
+    this._showBinInfo = this._showBinInfo.bind(this)
+
   }
 
   async _start(){
@@ -68,26 +64,31 @@ export default class Main extends Component {
       })
     }
   }
-  _showGeneral(){
-    this.setState({
-      general:true,
-    })
+  _showBinInfo(name){
+    if(name =='general'){
+      this.setState({
+        binInfo:true,
+        binInfoName:'general'
+      })
+    }else if(name=='recycle'){
+      this.setState({
+        binInfo:true,
+        binInfoName:'recycle'
+      })
+    }else if(name=='compostable'){
+      this.setState({
+        binInfo:true,
+        binInfoName:'compostable'
+      })
+    }else{
+      this.setState({
+        binInfo:true,
+        binInfoName:'compostable'
+      })
+    }
+
   }
-  _showRecycle(){
-    this.setState({
-      recycle:true,
-    })
-  }
-  _showCompostable(){
-    this.setState({
-      compostable:true,
-    })
-  }
-  _showHazadous(){
-    this.setState({
-      hazadous:true,
-    })
-  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -118,7 +119,7 @@ export default class Main extends Component {
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={this._showGeneral}
+              onPress={() =>{this._showBinInfo('general')}}
               />
           </View>
           <View style={styles.bin}>
@@ -131,7 +132,7 @@ export default class Main extends Component {
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={this._showRecycle}
+              onPress={() =>{this._showBinInfo('recycle')}}
             />
           </View>
           <View style={styles.bin}>
@@ -144,7 +145,7 @@ export default class Main extends Component {
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={this._showCompostable}
+              onPress={() =>{this._showBinInfo('compostable')}}
             />
           </View>
           <View style={styles.bin}>
@@ -157,7 +158,7 @@ export default class Main extends Component {
             />
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={this._showHazadous}
+              onPress={() =>{this._showBinInfo('hazadous')}}
             />
           </View>
         </View>
@@ -166,36 +167,12 @@ export default class Main extends Component {
                 title={this.state.lang.main.button.throw}
                 />
         </View>
-        <Modal visible={this.state.general} 
-          onRequestClose={() => {this.setState({general:false})}}
+        <Modal visible={this.state.binInfo} 
+          onRequestClose={() => {this.setState({binInfo:false})}}
           animationType={"slide"}
           >
           <BinInfo
-            name='general'
-            />
-        </Modal>
-        <Modal visible={this.state.recycle} 
-          onRequestClose={() => {this.setState({recycle:false})}}
-          animationType={"slide"}
-          >
-          <BinInfo
-            name='recycle'
-            />
-        </Modal>
-        <Modal visible={this.state.compostable} 
-          onRequestClose={() => {this.setState({compostable:false})}}
-          animationType={"slide"}
-          >
-          <BinInfo
-            name='compostable'
-            />
-        </Modal>
-        <Modal visible={this.state.hazadous} 
-          onRequestClose={() => {this.setState({hazadous:false})}}
-          animationType={"slide"}
-          >
-          <BinInfo
-            name='hazadous'
+            name={this.state.binInfoName}
             />
         </Modal>
 
