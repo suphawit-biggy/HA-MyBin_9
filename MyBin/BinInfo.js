@@ -100,6 +100,25 @@ export default class BinInfo extends Component {
       )
     }
   }
+  _getInfo(){
+    if(this.props.name == 'general'){
+      return(
+        <Text>{this.state.lang.main.text.generalInfo}</Text>
+      )
+    }else if(this.props.name == 'recycle'){
+      return(
+        <Text>{this.state.lang.main.text.recycleInfo}</Text>
+      )
+    }else if(this.props.name == 'compostable'){
+      return(
+        <Text>{this.state.lang.main.text.compostableInfo}</Text>
+      )
+    }else if(this.props.name == 'hazadous'){
+      return(
+        <Text>{this.state.lang.main.text.hazadousInfo}</Text>
+      )
+    }
+  }
   render() {
     return (
       <View>
@@ -111,7 +130,19 @@ export default class BinInfo extends Component {
           </View>
         </View>
         <View>
-          <BinImg name={this.props.name}/>
+          <View style={styles.binsRow}>
+            <View style={styles.bin}>
+              <BinImg name={this.props.name}/>
+            </View>
+            <View style={styles.bin}>
+              <Text style={styles.text}>
+                {this._getInfo()}
+              </Text>
+            </View>
+          </View>
+          <View style={styles.wasteTable}>
+            <Text>Table</Text>
+          </View>
         </View>
       </View>
     )

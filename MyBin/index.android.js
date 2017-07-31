@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry
 } from 'react-native';
-import Main from './Main';
+import Main from './main';
 
 AppRegistry.registerComponent('MyBin', () => Main)

@@ -65,6 +65,9 @@ module.exports = StyleSheet.create({
   throwButton: {
     paddingTop: 10,
     flex: 1,
-    
+  },
+  wasteTable: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
