@@ -15,104 +15,107 @@ import TH from './Lang_TH.json';
 import BinInfo from './BinInfo';
 var styles = require('./styles');
 
-var langCode ='@MyBin:Lang'
+var langCode = '@MyBin:Lang'
 export default class Main extends Component {
-  constructor(){
+  constructor() {
     super()
     this._start()
     this.state = {
       EN: true,
       lang: EN,
-      binInfo:false,
-      binInfoName:'',
-      testText:'',
+      binInfo: false,
+      binInfoName: '',
+      testText: '',
       general: 0,
-      recycle: 0,
       compostable: 0,
+      recycle: 0,
       hazardous: 0,
     }
     this._changeLang = this._changeLang.bind(this)
     this._start = this._start.bind(this)
     this._showBinInfo = this._showBinInfo.bind(this)
     this._updateBinInfo = this._updateBinInfo.bind(this)
+  }
 
-  }
-  _updateBinInfo(){
+  _updateBinInfo() {
     fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
-    .then((response) => response.json())
-    .then((responseJSON) => {
-      this.setState({
-        general: responseJSON.data.bin_statistics.general,
-        recycle: responseJSON.data.bin_statistics.recycle,
-        compostable: responseJSON.data.bin_statistics.compostable,
-        hazardous: responseJSON.data.bin_statistics.hazardous,
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        this.setState({
+          general: responseJSON.data.bin_statistics.general,
+          recycle: responseJSON.data.bin_statistics.recycle,
+          compostable: responseJSON.data.bin_statistics.compostable,
+          hazardous: responseJSON.data.bin_statistics.hazardous,
+        })
       })
-    })
-    .catch((error) => alert(error.message))
+      .catch((error) => alert(error.message))
   }
-  async _start(){
-     const value = await AsyncStorage.getItem(langCode)
-     if (value !== null){
-       if(value =='1'){
-         this.setState({
-           EN:false,
-           lang:EN
-         })
-       }else{
-         this.setState({
-           EN:true,
-           lang:TH
-         })
-       }
-     }
-     fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
-    .then((response) => response.json())
-    .then((responseJSON) => {
-      this.setState({
-        general: responseJSON.data.bin_statistics.general,
-        recycle: responseJSON.data.bin_statistics.recycle,
-        compostable: responseJSON.data.bin_statistics.compostable,
-        hazardous: responseJSON.data.bin_statistics.hazardous,
+
+  async _start() {
+    const value = await AsyncStorage.getItem(langCode)
+    if (value !== null) {
+      if (value == '1') {
+        this.setState({
+          EN: false,
+          lang: EN
+        })
+      } else {
+        this.setState({
+          EN: true,
+          lang: TH
+        })
+      }
+    }
+    fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        this.setState({
+          general: responseJSON.data.bin_statistics.general,
+          recycle: responseJSON.data.bin_statistics.recycle,
+          compostable: responseJSON.data.bin_statistics.compostable,
+          hazardous: responseJSON.data.bin_statistics.hazardous,
+        })
       })
-    })
-    .catch((error) => alert(error.message))
+      .catch((error) => alert(error.message))
   }
-  async _changeLang(){
+
+  async _changeLang() {
     this.setState({
       EN: !this.state.EN,
     })
-    if(this.state.EN){
+    if (this.state.EN) {
       await AsyncStorage.setItem(langCode, '1')
       this.setState({
-        lang:EN
+        lang: EN
       })
-    }else{
+    } else {
       await AsyncStorage.setItem(langCode, '0')
       this.setState({
-        lang:TH
+        lang: TH
       })
     }
   }
-  _showBinInfo(name){
-    if(name =='general'){
+
+  _showBinInfo(name) {
+    if (name == 'general') {
       this.setState({
-        binInfo:true,
-        binInfoName:'general'
+        binInfo: true,
+        binInfoName: 'general'
       })
-    }else if(name=='recycle'){
+    } else if (name == 'recycle') {
       this.setState({
-        binInfo:true,
-        binInfoName:'recycle'
+        binInfo: true,
+        binInfoName: 'recycle'
       })
-    }else if(name=='compostable'){
+    } else if (name == 'compostable') {
       this.setState({
-        binInfo:true,
-        binInfoName:'compostable'
+        binInfo: true,
+        binInfoName: 'compostable'
       })
-    }else{
+    } else {
       this.setState({
-        binInfo:true,
-        binInfoName:'compostable'
+        binInfo: true,
+        binInfoName: 'hazardous'
       })
     }
 
@@ -129,18 +132,18 @@ export default class Main extends Component {
           </View>
           <View style={styles.language}>
             <Button style={styles.languageButton}
-              title={this.state.EN? 'EN':'TH'}
+              title={this.state.EN ? 'EN' : 'TH'}
               onPress={this._changeLang}
-             />
+            />
           </View>
         </View>
         <Text style={styles.titleText}>
-            {this.state.lang.main.text.bin}
+          {this.state.lang.main.text.bin}
         </Text>
         <View style={styles.binsRow}>
           <View style={styles.bin}>
             <Text style={styles.text}>
-            {this.state.lang.main.text.general}
+              {this.state.lang.main.text.general}
             </Text>
             <Image
               style={styles.imgBin}
@@ -149,26 +152,12 @@ export default class Main extends Component {
             </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={() =>{this._showBinInfo('general')}}
-              />
-          </View>
-          <View style={styles.bin}>
-            <Text style={styles.text}>
-            {this.state.lang.main.text.recycle}
-            </Text>
-            <Image
-              style={styles.imgBin}
-              source={require('./images/bin/recycle.png')}>
-              <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
-            </Image>
-            <Button style={styles.infoButton}
-              title={this.state.lang.main.button.info}
-              onPress={() =>{this._showBinInfo('recycle')}}
+              onPress={() => { this._showBinInfo('general') }}
             />
           </View>
           <View style={styles.bin}>
             <Text style={styles.text}>
-            {this.state.lang.main.text.compostable}
+              {this.state.lang.main.text.compostable}
             </Text>
             <Image
               style={styles.imgBin}
@@ -177,12 +166,26 @@ export default class Main extends Component {
             </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={() =>{this._showBinInfo('compostable')}}
+              onPress={() => { this._showBinInfo('compostable') }}
             />
           </View>
           <View style={styles.bin}>
             <Text style={styles.text}>
-            {this.state.lang.main.text.hazardous}
+              {this.state.lang.main.text.recycle}
+            </Text>
+            <Image
+              style={styles.imgBin}
+              source={require('./images/bin/recycle.png')}>
+              <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
+            </Image>
+            <Button style={styles.infoButton}
+              title={this.state.lang.main.button.info}
+              onPress={() => { this._showBinInfo('recycle') }}
+            />
+          </View>
+          <View style={styles.bin}>
+            <Text style={styles.text}>
+              {this.state.lang.main.text.hazardous}
             </Text>
             <Image
               style={styles.imgBin}
@@ -191,25 +194,26 @@ export default class Main extends Component {
             </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={() =>{this._showBinInfo('hazardous')}}
+              onPress={() => { this._showBinInfo('hazardous') }}
             />
           </View>
         </View>
         <View style={styles.throwButton}>
-            <Button
-                title={this.state.lang.main.button.throw}/>
+          <Button
+            title={this.state.lang.main.button.throw} />
         </View>
-        
 
-        <Modal visible={this.state.binInfo} 
+
+        <Modal visible={this.state.binInfo}
           onRequestClose={() => {
-            this.setState({binInfo:false})
-            this._updateBinInfo()}}
+            this.setState({ binInfo: false })
+            this._updateBinInfo()
+          }}
           animationType={"slide"}
-          >
+        >
           <BinInfo
             name={this.state.binInfoName}
-            />
+          />
         </Modal>
 
       </View>

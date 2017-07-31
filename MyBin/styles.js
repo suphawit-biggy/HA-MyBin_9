@@ -1,5 +1,5 @@
 var React = require('react-native');
-var {StyleSheet} = React;
+var { StyleSheet } = React;
 
 module.exports = StyleSheet.create({
   container: {
@@ -9,12 +9,12 @@ module.exports = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   languageRow: {
-      flexDirection: 'row',
-      backgroundColor: 'rgba(0, 0, 0, 0.6)',
-      justifyContent: 'space-between',
+    flexDirection: 'row',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    justifyContent: 'space-between',
   },
   language: {
-    alignItems:'flex-end',
+    alignItems: 'flex-end',
     margin: 5
   },
   languageButton: {
@@ -23,7 +23,7 @@ module.exports = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 14
   },
-  textInsideBin:{
+  textInsideBin: {
     marginTop: 40,
     fontFamily: 'Arial',
     fontSize: 20,
@@ -31,14 +31,14 @@ module.exports = StyleSheet.create({
     color: 'white',
   },
   TitleRow: {
-    flex:1,
-    alignItems:'flex-start',
-    paddingLeft:10
+    flex: 1,
+    alignItems: 'flex-start',
+    paddingLeft: 10
   },
   topTitleText: {
     fontFamily: 'Arial',
     fontSize: 28,
-    color:'white'
+    color: 'white'
   },
   titleText: {
     fontFamily: 'Arial',
@@ -55,12 +55,12 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
   imgBin: {
-    width: 60, 
+    width: 60,
     height: 110,
     alignItems: 'center',
   },
   infoButton: {
-    
+
   },
   throwButton: {
     paddingTop: 10,
