@@ -24,18 +24,18 @@ var BinImg = React.createClass({
           source={require('./images/bin/general.png')}
         />
       )
-    } else if (this.props.name == 'recycle') {
-      return (
-        <Image
-          style={styles.imgBin}
-          source={require('./images/bin/recycle.png')}
-        />
-      )
     } else if (this.props.name == 'compostable') {
       return (
         <Image
           style={styles.imgBin}
           source={require('./images/bin/compostable.png')}
+        />
+      )
+    } else if (this.props.name == 'recycle') {
+      return (
+        <Image
+          style={styles.imgBin}
+          source={require('./images/bin/recycle.png')}
         />
       )
     } else {

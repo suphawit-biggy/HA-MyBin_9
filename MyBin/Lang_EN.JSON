@@ -8,19 +8,11 @@
     "text": {
       "bin": "Bin",
       "general": "General",
-<<<<<<< HEAD
       "generalInfo": "- Plastic food bags \n- Plastic food containers \n- Straw \n- Snack bags \n- Candy bags \n- Noodles bags \n- Noodles cups \n- Tissue \n- Paper cups ",
-      "recycle": "Recycle",
-      "recycleInfo": "- Food scraps \n- Fruit peels ",
       "compostable": "Compostable",
-      "compostableInfo": "- Bottles \n- Plastic bottles \n- Milk bottles \n- Glasses \n- Shattered glass \n- Tin cans \n- Beverage cans \n- Waste paper \n- Plastic bags ",
-=======
-      "generalInfo": "- Plastic food bags ?- Plastic food containers ?- Straw ?- Snack bags ?- Candy bags ?- Noodles bags ?- Noodles cups ?- Tissue ?- Paper cups ?",
-      "compostable": "Compostable",
-      "compostableInfo": "- Food scraps ?- Fruit peels ?",
+      "compostableInfo": "- Food scraps \n- Fruit peels ",
       "recycle": "Recycle",
-      "recycleInfo": "- Bottles ?- Plastic bottles ?- Milk bottles ?- Glasses ?- Shattered glass ?- Tin cans ?- Beverage cans ?- Waste paper ?- Plastic bags ?",
->>>>>>> origin/master
+      "recycleInfo": "- Bottles \n- Plastic bottles \n- Milk bottles \n- Glasses \n- Shattered glass \n- Tin cans \n- Beverage cans \n- Waste paper \n- Plastic bags ",
       "hazardous": "Hazardous",
       "hazardousInfo": "Items that may contain hazardous materials. \n- Insecticides \n- Pesticides \n- Thinners \n- Drugs \n- Artist’s materials \n- Cosmetics "
     },

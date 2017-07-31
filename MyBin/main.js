@@ -43,8 +43,8 @@ export default class Main extends Component {
       .then((responseJSON) => {
         this.setState({
           general: responseJSON.data.bin_statistics.general,
-          recycle: responseJSON.data.bin_statistics.recycle,
           compostable: responseJSON.data.bin_statistics.compostable,
+          recycle: responseJSON.data.bin_statistics.recycle,
           hazardous: responseJSON.data.bin_statistics.hazardous,
         })
       })
@@ -71,8 +71,8 @@ export default class Main extends Component {
       .then((responseJSON) => {
         this.setState({
           general: responseJSON.data.bin_statistics.general,
-          recycle: responseJSON.data.bin_statistics.recycle,
           compostable: responseJSON.data.bin_statistics.compostable,
+          recycle: responseJSON.data.bin_statistics.recycle,
           hazardous: responseJSON.data.bin_statistics.hazardous,
         })
       })
@@ -102,15 +102,15 @@ export default class Main extends Component {
         binInfo: true,
         binInfoName: 'general'
       })
-    } else if (name == 'recycle') {
-      this.setState({
-        binInfo: true,
-        binInfoName: 'recycle'
-      })
     } else if (name == 'compostable') {
       this.setState({
         binInfo: true,
         binInfoName: 'compostable'
+      })
+    } else if (name == 'recycle') {
+      this.setState({
+        binInfo: true,
+        binInfoName: 'recycle'
       })
     } else {
       this.setState({
