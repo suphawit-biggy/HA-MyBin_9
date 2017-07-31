@@ -35,7 +35,7 @@ module.exports = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent : 'center',
     paddingLeft: 10 ,
-    height : 60
+    height : 60,
   },
   topTitleText: {
     fontFamily: 'Arial',
