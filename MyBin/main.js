@@ -25,6 +25,11 @@ export default class Main extends Component {
       lang: EN,
       binInfo:false,
       binInfoName:'',
+      testText:'',
+      general: 0,
+      recycle: 0,
+      compostable: 0,
+      hazardous: 0,
     }
     this._changeLang = this._changeLang.bind(this)
     this._start = this._start.bind(this)
@@ -47,6 +52,17 @@ export default class Main extends Component {
          })
        }
      }
+     fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
+    .then((response) => response.json())
+    .then((responseJSON) => {
+      this.setState({
+        general: responseJSON.data.bin_statistics.general,
+        recycle: responseJSON.data.bin_statistics.recycle,
+        compostable: responseJSON.data.bin_statistics.compostable,
+        hazardous: responseJSON.data.bin_statistics.hazardous,
+      })
+    })
+    .catch((error) => alert(error.message))
   }
   async _changeLang(){
     this.setState({
@@ -115,8 +131,9 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/general.png')}
-            />
+              source={require('./images/bin/general.png')}>
+              <Text style={styles.textInsideBin}>{this.state.general}</Text>
+            </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
               onPress={() =>{this._showBinInfo('general')}}
@@ -128,8 +145,9 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/recycle.png')}
-            />
+              source={require('./images/bin/recycle.png')}>
+              <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
+            </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
               onPress={() =>{this._showBinInfo('recycle')}}
@@ -141,8 +159,9 @@ export default class Main extends Component {
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/compostable.png')}
-            />
+              source={require('./images/bin/compostable.png')}>
+              <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
+            </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
               onPress={() =>{this._showBinInfo('compostable')}}
@@ -150,23 +169,25 @@ export default class Main extends Component {
           </View>
           <View style={styles.bin}>
             <Text style={styles.text}>
-            {this.state.lang.main.text.hazadous}
+            {this.state.lang.main.text.hazardous}
             </Text>
             <Image
               style={styles.imgBin}
-              source={require('./images/bin/hazadous.png')}
-            />
+              source={require('./images/bin/hazardous.png')}>
+              <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
+            </Image>
             <Button style={styles.infoButton}
               title={this.state.lang.main.button.info}
-              onPress={() =>{this._showBinInfo('hazadous')}}
+              onPress={() =>{this._showBinInfo('hazardous')}}
             />
           </View>
         </View>
         <View style={styles.throwButton}>
             <Button
-                title={this.state.lang.main.button.throw}
-                />
+                title={this.state.lang.main.button.throw}/>
         </View>
+        
+
         <Modal visible={this.state.binInfo} 
           onRequestClose={() => {this.setState({binInfo:false})}}
           animationType={"slide"}

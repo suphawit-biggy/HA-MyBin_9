@@ -42,7 +42,7 @@ var BinImg = React.createClass({
       return(
         <Image
           style={styles.imgBin}
-          source={require('./images/bin/hazadous.png')}
+          source={require('./images/bin/hazardous.png')}
         />
       )
     }

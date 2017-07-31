@@ -23,6 +23,13 @@ module.exports = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 14
   },
+  textInsideBin:{
+    marginTop: 40,
+    fontFamily: 'Arial',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  },
   TitleRow: {
     flex:1,
     alignItems:'flex-start',
@@ -50,6 +57,7 @@ module.exports = StyleSheet.create({
   imgBin: {
     width: 60, 
     height: 110,
+    alignItems: 'center',
   },
   infoButton: {
     
