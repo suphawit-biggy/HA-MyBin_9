@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   View,
   Button,
@@ -17,30 +15,30 @@ var styles = require('./styles');
 
 var langCode = '@MyBin:Lang'
 var BinImg = React.createClass({
-  getInitialState(){
-    return{
-      curCount:0,
+  getInitialState() {
+    return {
+      curCount: 0,
     }
   },
   render() {
     fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
       .then((response) => response.json())
       .then((responseJSON) => {
-        if(this.props.name=='general'){
+        if (this.props.name == 'general') {
           this.setState({
             curCount: responseJSON.data.bin_statistics.general
           })
-        }else if(this.props.name=='compostable'){
+        } else if (this.props.name == 'compostable') {
           this.setState({
             curCount: responseJSON.data.bin_statistics.compostable
           })
         }
-        else if(this.props.name=='recycle'){
+        else if (this.props.name == 'recycle') {
           this.setState({
             curCount: responseJSON.data.bin_statistics.recycle
           })
         }
-        else{
+        else {
           this.setState({
             curCount: responseJSON.data.bin_statistics.hazardous
           })
@@ -83,34 +81,34 @@ var BinImg = React.createClass({
   }
 })
 var ItemList = React.createClass({
-  getInitialState(){
-    return{
-      plasticFoodBags:'',
-      plasticFoodContainers:'',
-      straw:'',
-      candyBags:'',
-      snackBags:'',
-      noodlesBags:'',
-      noodlesCups:'',
-      tissue:'',
-      paperCups:'',
-      foodScraps:'',
-      fruitPeels:'',
-      bottles:'',
-      plasticBottles:'',
-      milkBottles:'',
-      glasses:'',
-      shatteredGlass:'',
-      tinCans:'',
-      beverageCans:'',
-      wastePaper:'',
-      plasticBags:'',
-      insecticides:'',
-      pesticides:'',
-      thinners:'',
-      drugs:'',
-      artistsMaterials:'',
-      cosmetics:'',
+  getInitialState() {
+    return {
+      plasticFoodBags: '',
+      plasticFoodContainers: '',
+      straw: '',
+      candyBags: '',
+      snackBags: '',
+      noodlesBags: '',
+      noodlesCups: '',
+      tissue: '',
+      paperCups: '',
+      foodScraps: '',
+      fruitPeels: '',
+      bottles: '',
+      plasticBottles: '',
+      milkBottles: '',
+      glasses: '',
+      shatteredGlass: '',
+      tinCans: '',
+      beverageCans: '',
+      wastePaper: '',
+      plasticBags: '',
+      insecticides: '',
+      pesticides: '',
+      thinners: '',
+      drugs: '',
+      artistsMaterials: '',
+      cosmetics: '',
     }
   },
   render() {
@@ -191,7 +189,6 @@ var ItemList = React.createClass({
           <Text>{this.props.lang.waste.drugs} : {this.state.glasses}</Text>
           <Text>{this.props.lang.waste.artistsMaterials} : {this.state.shatteredGlass}</Text>
           <Text>{this.props.lang.waste.cosmetics} : {this.state.tinCans}</Text>
-
         </View>
       )
     }
@@ -205,7 +202,7 @@ export default class BinInfo extends Component {
       EN: true,
       lang: EN,
       visible: false,
-      curCount:0,
+      curCount: 0,
     }
     this._start = this._start.bind(this)
   }
@@ -281,21 +278,20 @@ export default class BinInfo extends Component {
           </View>
         </View>
         <View style={styles.upperContent}>
-          <View style={[styles.binsRow , { marginTop : 20 }] }>
+          <View style={[styles.binsRow, { marginTop: 20 }]}>
             <View style={styles.bin}>
               <BinImg name={this.props.name} />
             </View>
-            <View style={[styles.bin,{ marginTop : 15 , borderWidth : 1 , borderRadius:10}]}>
-              <Text style={[styles.text , {margin : 10}]}>
+            <View style={[styles.bin, { marginTop: 15, borderWidth: 1, borderRadius: 10 }]}>
+              <Text style={[styles.text, { margin: 10 }]}>
                 {this._getInfo()}
               </Text>
             </View>
           </View>
         </View>
         <View style={styles.wasteTable}>
-            <Text>Table</Text>
-            <ItemList name={this.props.name} lang={this.state.lang}/>
-          </View>
+          <ItemList name={this.props.name} lang={this.state.lang} />
+        </View>
       </ScrollView>
     )
   }

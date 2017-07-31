@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   View,
   Button,
@@ -104,9 +102,9 @@ export default class BinInfo extends Component {
   }
 
   _getTrashName() {
-      return (
-        <Text>{this.props.trashName}</Text>
-      )
+    return (
+      <Text>{this.props.trashName}</Text>
+    )
   }
   _getInfo() {
     if (this.props.name == 'general') {
@@ -129,20 +127,20 @@ export default class BinInfo extends Component {
   }
 
   _updateBinInfo() {
-      fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
-        .then((response) => response.json())
-        .then((responseJSON) => {
-          this.setState({
-            general: responseJSON.data.bin_statistics.general,
-            compostable: responseJSON.data.bin_statistics.compostable,
-            recycle: responseJSON.data.bin_statistics.recycle,
-            hazardous: responseJSON.data.bin_statistics.hazardous,
-          })
+    fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        this.setState({
+          general: responseJSON.data.bin_statistics.general,
+          compostable: responseJSON.data.bin_statistics.compostable,
+          recycle: responseJSON.data.bin_statistics.recycle,
+          hazardous: responseJSON.data.bin_statistics.hazardous,
         })
-        .catch((error) => alert(error.message))
-    }
+      })
+      .catch((error) => alert(error.message))
+  }
 
-  _getAmount(){
+  _getAmount() {
     if (this.props.name == 'general') {
       return (
         <Text>{this.state.lang.main.text.compostable}</Text>
@@ -162,20 +160,20 @@ export default class BinInfo extends Component {
     }
   }
 
-  _throwIt(){
+  _throwIt() {
     fetch('http://smartbin.devfunction.com/api/', {
       method: 'post',
       body: JSON.stringify({
         team_id: 9,
         secret: 'NN7Vtb',
-        waste_statistics: 
-          {
-            category: this._getInfo(),
-            selected: 1
-          }   
+        waste_statistics:
+        {
+          category: this._getInfo(),
+          selected: 1
+        }
       })
     })
-    .then((response) => response.json())
+      .then((response) => response.json())
       .then((responseJSON) => {
         this.setState({
           general: responseJSON.data.bin_statistics.general,
@@ -189,25 +187,25 @@ export default class BinInfo extends Component {
 
   render() {
     return (
-        <View style={styles.container}>
-            <View style={styles.languageRow}>
-                <View style={styles.TitleRow}>
-                    <Text style={styles.topTitleText}>
-                        {this._getTrashName()}
-                    </Text>
-                </View>
-            </View>
+      <View style={styles.container}>
+        <View style={styles.languageRow}>
+          <View style={styles.TitleRow}>
+            <Text style={styles.topTitleText}>
+              {this._getTrashName()}
+            </Text>
+          </View>
+        </View>
 
-            <View style={styles.upperContent}>
-          <View style={[styles.binsRow , { marginTop : 20 }] }>
+        <View style={styles.upperContent}>
+          <View style={[styles.binsRow, { marginTop: 20 }]}>
             <View style={styles.bin}>
               <Text>
                 {this._getAmount()}
               </Text>
               <BinImg name={this.props.name} />
             </View>
-            <View style={[styles.bin,{ marginTop : 15 , borderWidth : 1 , borderRadius:10}]}>
-              <Text style={[styles.text , {margin : 10}]}>
+            <View style={[styles.bin, { marginTop: 15, borderWidth: 1, borderRadius: 10 }]}>
+              <Text style={[styles.text, { margin: 10 }]}>
                 {this._getInfo()}
               </Text>
             </View>
@@ -215,21 +213,21 @@ export default class BinInfo extends Component {
         </View>
 
         <View style={styles.throwButton}>
-              <Button
-                color = '#3d5afe'
-                title={this.state.lang.throw.button.throwIt}
-                onPress={ () => Alert.alert(
-                    this.state.lang.comfirmPopUp.text.comfirmation,
-                    this.state.lang.comfirmPopUp.text.ruSure,
-                    [
-                      {text:  this.state.lang.comfirmPopUp.button.yes , onPress: () =>  this.throwIt()},
-                      {text: this.state.lang.comfirmPopUp.button.no, onPress: () => console.log('Cancel Pressed')},
-                    ]  ,
-                   { cancelable: false }
-                 )}
-                 />
-            </View>
+          <Button
+            color='#3d5afe'
+            title={this.state.lang.throw.button.throwIt}
+            onPress={() => Alert.alert(
+              this.state.lang.comfirmPopUp.text.comfirmation,
+              this.state.lang.comfirmPopUp.text.ruSure,
+              [
+                { text: this.state.lang.comfirmPopUp.button.yes, onPress: () => this.throwIt() },
+                { text: this.state.lang.comfirmPopUp.button.no, onPress: () => console.log('Cancel Pressed') },
+              ],
+              { cancelable: false }
+            )}
+          />
         </View>
+      </View>
     )
   }
 }
