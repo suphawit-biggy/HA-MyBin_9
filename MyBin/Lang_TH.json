@@ -35,5 +35,32 @@
       "yes": "ใช่",
       "no": "ไว้ทีหลัง"
     }
+  },
+  "waste":{
+    "plasticFoodBags" : "Plastic food bags",
+    "plasticFoodContainers" : "Plastic food containers",
+    "straw" : "Staw",
+    "snackBags" : "Snack bags",
+    "candyBags" : "candy bags",
+    "noodlesBags" : "Noodles bags",
+    "noodlesCups" : "Noodles cups",
+    "tissue" : "Tissue",
+    "paperCups" : "Paper Cups",
+    "foodScraps" : "Food scraps",
+    "fruitPeels" : "Fruit peels",
+    "bottles" : "Bottles",
+    "milkBottles" : "Milk Bottles",
+    "glasses" : "Glasses",
+    "shatteredGlass" : "Shattered glass",
+    "tinCans" : "Tin cans",
+    "beverageCans" : "Beverage Cans",
+    "wastePaper" : "Waste paper",
+    "plasticBags" : "Plastic bags",
+    "insecticides" : "Insecticides",
+    "pesticides" : "pesticides",
+    "thinners" : "Thinners",
+    "drugs" : "Drugs",
+    "artistsMaterials" : "Artist's materials",
+    "cosmetics" : "Cosmetics"
   }
 }
