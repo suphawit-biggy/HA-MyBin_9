@@ -4,18 +4,18 @@ var { StyleSheet } = React;
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#88c542'
   },
   languageRow: {
     flexDirection: 'row',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
     justifyContent: 'space-between',
+    alignItems : 'center',
   },
   language: {
     alignItems: 'flex-end',
-    margin: 5
+    margin: 5,
+    marginRight : 10
   },
   languageButton: {
   },
@@ -33,27 +33,40 @@ module.exports = StyleSheet.create({
   TitleRow: {
     flex: 1,
     alignItems: 'flex-start',
-    paddingLeft: 10
+    justifyContent : 'center',
+    paddingLeft: 10 ,
+    height : 60
   },
   topTitleText: {
     fontFamily: 'Arial',
     fontSize: 28,
     color: 'white'
   },
+  upperContent : {
+    margin : 5 ,
+    borderRadius : 15 ,
+    borderColor : '#30499b',
+    borderWidth : 5,
+    backgroundColor : '#f2f2f2'
+  },
   titleText: {
     fontFamily: 'Arial',
     fontSize: 28,
     fontWeight: 'bold',
-    marginTop : 25 
+    marginTop : 15 ,
+    textAlign : 'center'
   },
   binsRow: {
     flexDirection: 'row',
-    margin: 10,
+    margin: 5,
+    marginBottom : 20
+    
   },
   bin: {
     flex: 1,
     margin: 2,
     alignItems: 'center',
+    justifyContent : 'center'
   },
   imgBin: {
     width: 60,
@@ -61,13 +74,19 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
   throwButton: {
-    textAlign: 'center',
     justifyContent : 'center',
+    alignItems : 'center',
     paddingTop: 10,
-    flex: 1,
+    flex : 1 ,
+    margin : 5
   },
   wasteTable: {
-    justifyContent: 'center',
     alignItems: 'center',
+    borderColor: '#30499b' ,
+    borderWidth : 5,
+    flex : 1 ,
+    borderRadius : 15,
+    margin : 5,
+    backgroundColor : '#f2f2f2'
   },
 });

@@ -121,7 +121,7 @@ export default class BinInfo extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.languageRow}>
           <View style={styles.TitleRow}>
             <Text style={styles.topTitleText}>
@@ -129,21 +129,21 @@ export default class BinInfo extends Component {
             </Text>
           </View>
         </View>
-        <View>
+        <View style={styles.upperContent}>
           <View style={[styles.binsRow , { marginTop : 20 }] }>
             <View style={styles.bin}>
               <BinImg name={this.props.name} />
             </View>
-            <View style={[styles.bin,{ marginTop : 15 }]}>
-              <Text style={styles.text}>
+            <View style={[styles.bin,{ marginTop : 15 , borderWidth : 1 , borderRadius:10}]}>
+              <Text style={[styles.text , {margin : 10}]}>
                 {this._getInfo()}
               </Text>
             </View>
           </View>
-          <View style={styles.wasteTable}>
+        </View>
+        <View style={styles.wasteTable}>
             <Text>Table</Text>
           </View>
-        </View>
       </View>
     )
   }

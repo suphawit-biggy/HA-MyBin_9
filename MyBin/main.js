@@ -8,7 +8,7 @@ import {
   Image,
   AsyncStorage,
   Navigator,
-  Modal
+  Modal,
 } from 'react-native';
 import EN from './Lang_EN.json';
 import TH from './Lang_TH.json';
@@ -122,102 +122,110 @@ export default class Main extends Component {
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.languageRow}>
-          <View style={styles.TitleRow}>
-            <Text style={styles.topTitleText}>
-              {this.state.lang.topBar.text.main}
+    return (  
+        <View style={styles.container}>
+          <View style={styles.languageRow}>
+            <View style={styles.TitleRow}>
+              <Text style={styles.topTitleText}>
+                {this.state.lang.topBar.text.main}
+              </Text>
+            </View>
+            <View style={styles.language}>
+              <Button style={styles.languageButton}
+                title={this.state.EN ? 'EN' : 'TH'}
+                onPress={this._changeLang}
+                color='#f0a32f'
+              />
+            </View>
+          </View> 
+          
+          <View style={styles.upperContent}> 
+            <Text style={styles.titleText}>
+              {this.state.lang.main.text.bin}
             </Text>
-          </View>
-          <View style={styles.language}>
-            <Button style={styles.languageButton}
-              title={this.state.EN ? 'EN' : 'TH'}
-              onPress={this._changeLang}
-            />
-          </View>
-        </View>
-        <Text style={styles.titleText}>
-          {this.state.lang.main.text.bin}
-        </Text>
-        <View style={styles.binsRow}>
-          <View style={styles.bin}>
-            <Text style={styles.text}>
-              {this.state.lang.main.text.general}
-            </Text>
-            <Image
-              style={styles.imgBin}
-              source={require('./images/bin/general.png')}>
-              <Text style={styles.textInsideBin}>{this.state.general}</Text>
-            </Image>
+            <View style={styles.binsRow}>
+              <View style={styles.bin}>
+                <Text style={styles.text}>
+                  {this.state.lang.main.text.general}
+                </Text>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/general.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.general}</Text>
+                </Image>
+                <Button
+                  color = '#ee3582'
+                  title={this.state.lang.main.button.info}
+                  onPress={() => { this._showBinInfo('general') }}
+                />
+              </View>
+              <View style={styles.bin}>
+                <Text style={styles.text}>
+                  {this.state.lang.main.text.compostable}
+                </Text>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/compostable.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
+                </Image>
+                <Button
+                  color = '#ee3582'
+                  title={this.state.lang.main.button.info}
+                  onPress={() => { this._showBinInfo('compostable') }}
+                />
+              </View>
+              <View style={styles.bin}>
+                <Text style={styles.text}>
+                  {this.state.lang.main.text.recycle}
+                </Text>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/recycle.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
+                </Image>
+                <Button 
+                  color = '#ee3582'
+                  title={this.state.lang.main.button.info}
+                  onPress={() => { this._showBinInfo('recycle') }}
+                />
+              </View>
+              <View style={styles.bin}>
+                <Text style={styles.text}>
+                  {this.state.lang.main.text.hazardous}
+                </Text>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/hazardous.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
+                </Image>
+                <Button 
+                  color = '#ee3582'
+                  title={this.state.lang.main.button.info}
+                  onPress={() => { this._showBinInfo('hazardous') }}
+                />
+              </View>
+            </View>
+          </View> 
+
+          <View style={styles.throwButton}>
             <Button
-              title={this.state.lang.main.button.info}
-              onPress={() => { this._showBinInfo('general') }}
-            />
+              color = '#3d5afe'
+              title={this.state.lang.main.button.throw} />
           </View>
-          <View style={styles.bin}>
-            <Text style={styles.text}>
-              {this.state.lang.main.text.compostable}
-            </Text>
-            <Image
-              style={styles.imgBin}
-              source={require('./images/bin/compostable.png')}>
-              <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
-            </Image>
-            <Button
-              title={this.state.lang.main.button.info}
-              onPress={() => { this._showBinInfo('compostable') }}
-            />
-          </View>
-          <View style={styles.bin}>
-            <Text style={styles.text}>
-              {this.state.lang.main.text.recycle}
-            </Text>
-            <Image
-              style={styles.imgBin}
-              source={require('./images/bin/recycle.png')}>
-              <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
-            </Image>
-            <Button 
-              title={this.state.lang.main.button.info}
-              onPress={() => { this._showBinInfo('recycle') }}
-            />
-          </View>
-          <View style={styles.bin}>
-            <Text style={styles.text}>
-              {this.state.lang.main.text.hazardous}
-            </Text>
-            <Image
-              style={styles.imgBin}
-              source={require('./images/bin/hazardous.png')}>
-              <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
-            </Image>
-            <Button 
-              title={this.state.lang.main.button.info}
-              onPress={() => { this._showBinInfo('hazardous') }}
-            />
-          </View>
-        </View>
-        <View style={styles.throwButton}>
-        
-          <Button
-            title={this.state.lang.main.button.throw} />
-        </View>
 
+          <Modal visible={this.state.binInfo}
+            onRequestClose={() => {
+              this.setState({ binInfo: false })
+              this._updateBinInfo()
+            }}
+            animationType={"slide"}
+          >
+            <BinInfo
+              name={this.state.binInfoName}
+            />
+          </Modal> 
 
-        <Modal visible={this.state.binInfo}
-          onRequestClose={() => {
-            this.setState({ binInfo: false })
-            this._updateBinInfo()
-          }}
-          animationType={"slide"}
-        >
-          <BinInfo
-            name={this.state.binInfoName}
-          />
-        </Modal>
-
-      </View>
+        </View> 
     )
   }
 }
