@@ -9,6 +9,7 @@ import {
   AsyncStorage,
   Navigator,
   Modal,
+  ScrollView,
 } from 'react-native';
 import EN from './Lang_EN.json';
 import TH from './Lang_TH.json';
@@ -123,7 +124,7 @@ export default class Main extends Component {
 
   render() {
     return (  
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
           <View style={styles.languageRow}>
             <View style={styles.TitleRow}>
               <Text style={styles.topTitleText}>
@@ -225,7 +226,7 @@ export default class Main extends Component {
             />
           </Modal> 
 
-        </View> 
+        </ScrollView> 
     )
   }
 }

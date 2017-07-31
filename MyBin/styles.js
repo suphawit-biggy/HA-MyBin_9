@@ -77,6 +77,7 @@ module.exports = StyleSheet.create({
     justifyContent : 'center',
     alignItems : 'center',
     paddingTop: 10,
+    paddingBottom: 10,
     flex : 1 ,
     margin : 5
   },
