@@ -130,11 +130,11 @@ export default class BinInfo extends Component {
           </View>
         </View>
         <View>
-          <View style={styles.binsRow}>
+          <View style={[styles.binsRow , { marginTop : 20 }] }>
             <View style={styles.bin}>
               <BinImg name={this.props.name} />
             </View>
-            <View style={styles.bin}>
+            <View style={[styles.bin,{ marginTop : 15 }]}>
               <Text style={styles.text}>
                 {this._getInfo()}
               </Text>

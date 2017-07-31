@@ -150,7 +150,7 @@ export default class Main extends Component {
               source={require('./images/bin/general.png')}>
               <Text style={styles.textInsideBin}>{this.state.general}</Text>
             </Image>
-            <Button style={styles.infoButton}
+            <Button
               title={this.state.lang.main.button.info}
               onPress={() => { this._showBinInfo('general') }}
             />
@@ -164,7 +164,7 @@ export default class Main extends Component {
               source={require('./images/bin/compostable.png')}>
               <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
             </Image>
-            <Button style={styles.infoButton}
+            <Button
               title={this.state.lang.main.button.info}
               onPress={() => { this._showBinInfo('compostable') }}
             />
@@ -178,7 +178,7 @@ export default class Main extends Component {
               source={require('./images/bin/recycle.png')}>
               <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
             </Image>
-            <Button style={styles.infoButton}
+            <Button 
               title={this.state.lang.main.button.info}
               onPress={() => { this._showBinInfo('recycle') }}
             />
@@ -192,13 +192,14 @@ export default class Main extends Component {
               source={require('./images/bin/hazardous.png')}>
               <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
             </Image>
-            <Button style={styles.infoButton}
+            <Button 
               title={this.state.lang.main.button.info}
               onPress={() => { this._showBinInfo('hazardous') }}
             />
           </View>
         </View>
         <View style={styles.throwButton}>
+        
           <Button
             title={this.state.lang.main.button.throw} />
         </View>

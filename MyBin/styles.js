@@ -21,7 +21,7 @@ module.exports = StyleSheet.create({
   },
   text: {
     fontFamily: 'Arial',
-    fontSize: 14
+    fontSize: 13
   },
   textInsideBin: {
     marginTop: 40,
@@ -44,6 +44,7 @@ module.exports = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 28,
     fontWeight: 'bold',
+    marginTop : 25 
   },
   binsRow: {
     flexDirection: 'row',
@@ -59,10 +60,9 @@ module.exports = StyleSheet.create({
     height: 110,
     alignItems: 'center',
   },
-  infoButton: {
-
-  },
   throwButton: {
+    textAlign: 'center',
+    justifyContent : 'center',
     paddingTop: 10,
     flex: 1,
   },
