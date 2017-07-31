@@ -17,34 +17,67 @@ var styles = require('./styles');
 
 var langCode = '@MyBin:Lang'
 var BinImg = React.createClass({
+  getInitialState(){
+    return{
+      curCount:0,
+    }
+  },
   render() {
+    fetch('http://smartbin.devfunction.com/api/?team_id=9&secret=NN7Vtb')
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        if(this.props.name=='general'){
+          this.setState({
+            curCount: responseJSON.data.bin_statistics.general
+          })
+        }else if(this.props.name=='compostable'){
+          this.setState({
+            curCount: responseJSON.data.bin_statistics.compostable
+          })
+        }
+        else if(this.props.name=='recycle'){
+          this.setState({
+            curCount: responseJSON.data.bin_statistics.recycle
+          })
+        }
+        else{
+          this.setState({
+            curCount: responseJSON.data.bin_statistics.hazardous
+          })
+        }
+      })
+      .catch((error) => alert(error.message))
     if (this.props.name == 'general') {
       return (
         <Image
           style={styles.imgBin}
-          source={require('./images/bin/general.png')}
-        />
+          source={require('./images/bin/general.png')}>
+          <Text style={styles.textInsideBin}>{this.state.curCount}</Text>
+        </Image>
       )
     } else if (this.props.name == 'compostable') {
       return (
         <Image
           style={styles.imgBin}
-          source={require('./images/bin/compostable.png')}
-        />
+          source={require('./images/bin/compostable.png')}>
+          <Text style={styles.textInsideBin}>{this.state.curCount}</Text>
+        </Image>
       )
     } else if (this.props.name == 'recycle') {
       return (
         <Image
           style={styles.imgBin}
-          source={require('./images/bin/recycle.png')}
-        />
+          source={require('./images/bin/recycle.png')}>
+          <Text style={styles.textInsideBin}>{this.state.curCount}</Text>
+        </Image>
       )
     } else {
       return (
         <Image
           style={styles.imgBin}
-          source={require('./images/bin/hazardous.png')}
-        />
+          source={require('./images/bin/hazardous.png')}>
+          <Text style={styles.textInsideBin}>{this.state.curCount}</Text>
+        </Image>
       )
     }
   }
@@ -173,6 +206,7 @@ export default class BinInfo extends Component {
       EN: true,
       lang: EN,
       visible: false,
+      curCount:0,
     }
     this._start = this._start.bind(this)
   }
