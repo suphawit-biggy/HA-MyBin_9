@@ -56,6 +56,7 @@ export default class BinInfo extends Component {
       EN: true,
       lang: EN,
       visible: false,
+      name :'AA',
     }
     this._start = this._start.bind(this)
     this.throwIt = this.throwIt.bind(this)
@@ -74,6 +75,59 @@ export default class BinInfo extends Component {
           EN: true,
           lang: TH
         })
+      }
+      if(this.props.num == 0){
+        this.setState({name: this.state.lang.waste.artistsMaterials})
+      }else if(this.props.num == 1){
+        this.setState({name: this.state.lang.waste.beverageCans})
+      }else if(this.props.num == 2){
+        this.setState({name: this.state.lang.waste.bottles})
+      }else if(this.props.num == 3){
+        this.setState({name: this.state.lang.waste.candyBags})
+      }else if(this.props.num == 4){
+        this.setState({name: this.state.lang.waste.cosmetics})
+      }else if(this.props.num == 5){
+        this.setState({name: this.state.lang.waste.drugs})
+      }else if(this.props.num == 6){
+        this.setState({name: this.state.lang.waste.foodScraps})
+      }else if(this.props.num == 7){
+        this.setState({name: this.state.lang.waste.fruitPeels})
+      }else if(this.props.num == 8){
+        this.setState({name: this.state.lang.waste.glasses})
+      }else if(this.props.num == 9){
+        this.setState({name: this.state.lang.waste.insecticides})
+      }else if(this.props.num == 10){
+        this.setState({name: this.state.lang.waste.milkBottles})
+      }else if(this.props.num == 11){
+        this.setState({name: this.state.lang.waste.noodlesBags})
+      }else if(this.props.num == 12){
+        this.setState({name: this.state.lang.waste.noodlesCups})
+      }else if(this.props.num == 13){
+        this.setState({name: this.state.lang.waste.paperCups})
+      }else if(this.props.num == 14){
+        this.setState({name: this.state.lang.waste.pesticides})
+      }else if(this.props.num == 15){
+        this.setState({name: this.state.lang.waste.plasticBags})
+      }else if(this.props.num == 16){
+        this.setState({name: this.state.lang.waste.plasticBottles})
+      }else if(this.props.num == 17){
+        this.setState({name: this.state.lang.waste.plasticFoodBags})
+      }else if(this.props.num == 18){
+        this.setState({name: this.state.lang.waste.plasticFoodContainers})
+      }else if(this.props.num == 19){
+        this.setState({name: this.state.lang.waste.shatteredGlass})
+      }else if(this.props.num == 20){
+        this.setState({name: this.state.lang.waste.snackBags})
+      }else if(this.props.num == 21){
+        this.setState({name: this.state.lang.waste.straw})
+      }else if(this.props.num == 22){
+        this.setState({name: this.state.lang.waste.thinners})
+      }else if(this.props.num == 23){
+        this.setState({name: this.state.lang.waste.tinCans})
+      }else if(this.props.num == 24){
+        this.setState({name: this.state.lang.waste.tissue})
+      }else if(this.props.num == 25){
+        this.setState({name: this.state.lang.waste.wastePaper})
       }
     }
     var temp = this.props.visible
@@ -102,11 +156,6 @@ export default class BinInfo extends Component {
     }
   }
 
-  _getTrashName() {
-    return (
-      <Text>{this.props.trashName}</Text>
-    )
-  }
   _getInfo() {
     if (this.props.name == 'general') {
       return (
@@ -716,7 +765,7 @@ export default class BinInfo extends Component {
         <View style={styles.languageRow}>
           <View style={styles.TitleRow}>
             <Text style={styles.topTitleText}>
-              {this._getTrashName()}
+              {this.state.name}
             </Text>
           </View>
         </View>
@@ -729,7 +778,7 @@ export default class BinInfo extends Component {
               </Text>
               <BinImg name={this.props.name} />
             </View>
-            <View style={[styles.bin, { marginTop: 15, borderWidth: 1, borderRadius: 10 }]}>
+            <View style={[styles.bin, { margin: 15, borderWidth: 2, borderRadius: 10 , borderColor:'#ffA500'}]}>
               <Text style={[styles.text, { margin: 10 }]}>
                 {this._getInfo()}
               </Text>

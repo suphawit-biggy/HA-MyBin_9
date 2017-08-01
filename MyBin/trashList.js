@@ -113,292 +113,321 @@ export default class TrashList extends Component {
             </Text>
           </View>
         </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/artistsMaterials.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(0)}>
-              <Text style={styles.text}>{this.state.lang.waste.artistsMaterials}</Text>
-            </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(0)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/artistsMaterials.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.artistsMaterials}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/beverageCans.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(1)}>
-              <Text style={styles.text}>{this.state.lang.waste.beverageCans}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(1)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/beverageCans.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.beverageCans}</Text>
+              </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/bottles.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(2)}>
-              <Text style={styles.text}>{this.state.lang.waste.bottles}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(2)}>
+            <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/bottles.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.bottles}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/candyBags.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(3)}>
-              <Text style={styles.text}>{this.state.lang.waste.candyBags}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(3)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/candyBags.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+               <Text style={styles.text}>{this.state.lang.waste.candyBags}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/cosmetics.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(4)}>
-              <Text style={styles.text}>{this.state.lang.waste.cosmetics}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(4)}>  
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/cosmetics.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.cosmetics}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/drugs.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(5)}>
-              <Text style={styles.text}>{this.state.lang.waste.drugs}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(5)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/drugs.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.drugs}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/foodScraps.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(6)}>
-              <Text style={styles.text}>{this.state.lang.waste.foodScraps}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>  
+        <TouchableHighlight onPress={() => this._handleTouch(6)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/foodScraps.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.foodScraps}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/fruitPeels.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(7)}>
-              <Text style={styles.text}>{this.state.lang.waste.fruitPeels}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(7)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/fruitPeels.png')}>
+            </Image>
+            <View style={styles.wasteItem}>             
+                <Text style={styles.text}>{this.state.lang.waste.fruitPeels}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/glasses.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(8)}>
-              <Text style={styles.text}>{this.state.lang.waste.glasses}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(8)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/glasses.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.glasses}</Text>
+             
+            </View>
+          </View> 
+        </TouchableHighlight>  
+        <TouchableHighlight onPress={() => this._handleTouch(9)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/insecticides.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.insecticides}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/insecticides.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(9)}>
-              <Text style={styles.text}>{this.state.lang.waste.insecticides}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(10)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/milkBottles.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.milkBottles}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/milkBottles.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(10)}>
-              <Text style={styles.text}>{this.state.lang.waste.milkBottles}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>  
+        <TouchableHighlight onPress={() => this._handleTouch(11)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/noodlesBags.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.noodlesBags}</Text>
+           
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/noodlesBags.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(11)}>
-              <Text style={styles.text}>{this.state.lang.waste.noodlesBags}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(12)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/noodlesCups.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.noodlesCups}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/noodlesCups.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(12)}>
-              <Text style={styles.text}>{this.state.lang.waste.noodlesCups}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(13)}> 
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/paperCups.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+                <Text style={styles.text}>{this.state.lang.waste.paperCups}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/paperCups.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(13)}>
-              <Text style={styles.text}>{this.state.lang.waste.paperCups}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(14)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/pesticides.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.pesticides}</Text>
+    
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/pesticides.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(14)}>
-              <Text style={styles.text}>{this.state.lang.waste.pesticides}</Text>
-            </TouchableHighlight>
-          </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/plasticBags.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
+        </TouchableHighlight>
             <TouchableHighlight onPress={() => this._handleTouch(15)}>
-              <Text style={styles.text}>{this.state.lang.waste.plasticBags}</Text>
-            </TouchableHighlight>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/plasticBags.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+  
+                <Text style={styles.text}>{this.state.lang.waste.plasticBags}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/plasticBottles.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(16)}>
-              <Text style={styles.text}>{this.state.lang.waste.plasticBottles}</Text>
-            </TouchableHighlight>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._handleTouch(16)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/plasticBottles.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.plasticBottles}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/plasticFoodBags.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(17)}>
-              <Text style={styles.text}>{this.state.lang.waste.plasticFoodBags}</Text>
-            </TouchableHighlight>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._handleTouch(17)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/plasticFoodBags.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.plasticFoodBags}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/plasticFoodContainers.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(18)}>
-              <Text style={styles.text}>{this.state.lang.waste.plasticFoodContainers}</Text>
-            </TouchableHighlight>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._handleTouch(18)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/plasticFoodContainers.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.plasticFoodContainers}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/shatteredGlass.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(19)}>
-              <Text style={styles.text}>{this.state.lang.waste.shatteredGlass}</Text>
-            </TouchableHighlight>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._handleTouch(19)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/shatteredGlass.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.shatteredGlass}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/snackBags.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(20)}>
-              <Text style={styles.text}>{this.state.lang.waste.snackBags}</Text>
-            </TouchableHighlight>
+          </TouchableHighlight> 
+          <TouchableHighlight onPress={() => this._handleTouch(20)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/snackBags.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+             
+                <Text style={styles.text}>{this.state.lang.waste.snackBags}</Text>
+         
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/straw.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(21)}>
-              <Text style={styles.text}>{this.state.lang.waste.straw}</Text>
-            </TouchableHighlight>
+               </TouchableHighlight>
+               <TouchableHighlight onPress={() => this._handleTouch(21)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/straw.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.straw}</Text>
+            
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/thinners.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
+            </TouchableHighlight>
             <TouchableHighlight onPress={() => this._handleTouch(22)}>
-              <Text style={styles.text}>{this.state.lang.waste.thinners}</Text>
-            </TouchableHighlight>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/thinners.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.thinners}</Text>
+              
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/tinCans.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(23)}>
-              <Text style={styles.text}>{this.state.lang.waste.tinCans}</Text>
-            </TouchableHighlight>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._handleTouch(23)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/tinCans.png')}>
+            </Image>
+            <View style={styles.wasteItem}>
+              
+                <Text style={styles.text}>{this.state.lang.waste.tinCans}</Text>
+           
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/tissue.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(24)}>
-              <Text style={styles.text}>{this.state.lang.waste.tissue}</Text>
-            </TouchableHighlight>
+             </TouchableHighlight>
+        <TouchableHighlight onPress={() => this._handleTouch(24)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/tissue.png')}>
+            </Image>
+            <View style={styles.wasteItem}> 
+             <Text style={styles.text}>{this.state.lang.waste.tissue}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.wasteList}>
-          <Image
-            style={styles.wastePic}
-            source={require('./images/waste/wastePaper.png')}>
-          </Image>
-          <View style={styles.wasteItem}>
-            <TouchableHighlight onPress={() => this._handleTouch(25)}>
-              <Text style={styles.text}>{this.state.lang.waste.wastePaper}</Text>
-            </TouchableHighlight>
+         </TouchableHighlight>  
+        <TouchableHighlight onPress={() => this._handleTouch(25)}>
+          <View style={styles.wasteList}>
+            <Image
+              style={styles.wastePic}
+              source={require('./images/waste/wastePaper.png')}>
+            </Image>
+            <View style={styles.wasteItem}>            
+                <Text style={styles.text}>{this.state.lang.waste.wastePaper}</Text>
+            </View>
           </View>
-        </View>
+         </TouchableHighlight> 
         <Modal visible={this.state.throw}
           onRequestClose={() => {
             this.setState({ throw: false })
