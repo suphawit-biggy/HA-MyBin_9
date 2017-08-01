@@ -123,25 +123,25 @@ var ItemList = React.createClass({
           candyBags: responseJSON.data.waste_statistics.candyBags,
           noodlesBags: responseJSON.data.waste_statistics.noodlesBags,
           noodlesCups: responseJSON.data.waste_statistics.noodlesCups,
-          tissue: responseJSON.data.waste_statistics.tissue,
+          tissue: responseJSON.data.waste_statistics.Tissue,
           paperCups: responseJSON.data.waste_statistics.paperCups,
           foodScraps: responseJSON.data.waste_statistics.foodScraps,
           fruitPeels: responseJSON.data.waste_statistics.fruitPeels,
-          bottles: responseJSON.data.waste_statistics.bottles,
+          bottles: responseJSON.data.waste_statistics.Bottles,
           plasticBottles: responseJSON.data.waste_statistics.plasticBottles,
           milkBottles: responseJSON.data.waste_statistics.milkBottles,
-          glasses: responseJSON.data.waste_statistics.glasses,
+          glasses: responseJSON.data.waste_statistics.Glasses,
           shatteredGlass: responseJSON.data.waste_statistics.shatteredGlass,
           tinCans: responseJSON.data.waste_statistics.tinCans,
           beverageCans: responseJSON.data.waste_statistics.beverageCans,
           wastePaper: responseJSON.data.waste_statistics.wastePaper,
           plasticBags: responseJSON.data.waste_statistics.plasticBags,
-          insecticides: responseJSON.data.waste_statistics.insecticides,
-          pesticides: responseJSON.data.waste_statistics.pesticides,
-          thinners: responseJSON.data.waste_statistics.thinners,
-          drugs: responseJSON.data.waste_statistics.drugs,
+          insecticides: responseJSON.data.waste_statistics.Insecticides,
+          pesticides: responseJSON.data.waste_statistics.Pesticides,
+          thinners: responseJSON.data.waste_statistics.Thinners,
+          drugs: responseJSON.data.waste_statistics.Drugs,
           artistsMaterials: responseJSON.data.waste_statistics.artistsMaterials,
-          cosmetics: responseJSON.data.waste_statistics.cosmetics,
+          cosmetics: responseJSON.data.waste_statistics.Cosmetics,
         })
       })
       .catch((error) => alert(error.message))
@@ -183,12 +183,12 @@ var ItemList = React.createClass({
     } else {
       return (
         <View>
-          <Text>{this.props.lang.waste.insecticides} : {this.state.bottles}</Text>
-          <Text>{this.props.lang.waste.pesticides} : {this.state.plasticBottles}</Text>
-          <Text>{this.props.lang.waste.thinners} : {this.state.milkBottles}</Text>
-          <Text>{this.props.lang.waste.drugs} : {this.state.glasses}</Text>
-          <Text>{this.props.lang.waste.artistsMaterials} : {this.state.shatteredGlass}</Text>
-          <Text>{this.props.lang.waste.cosmetics} : {this.state.tinCans}</Text>
+          <Text>{this.props.lang.waste.insecticides} : {this.state.insecticides}</Text>
+          <Text>{this.props.lang.waste.pesticides} : {this.state.pesticides}</Text>
+          <Text>{this.props.lang.waste.thinners} : {this.state.thinners}</Text>
+          <Text>{this.props.lang.waste.drugs} : {this.state.drugs}</Text>
+          <Text>{this.props.lang.waste.artistsMaterials} : {this.state.artistsMaterials}</Text>
+          <Text>{this.props.lang.waste.cosmetics} : {this.state.cosmetics}</Text>
         </View>
       )
     }

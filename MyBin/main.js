@@ -14,6 +14,7 @@ import {
 import EN from './Lang_EN.json';
 import TH from './Lang_TH.json';
 import BinInfo from './BinInfo';
+import TrashList from './TrashList';
 var styles = require('./styles');
 
 var langCode = '@MyBin:Lang'
@@ -31,11 +32,13 @@ export default class Main extends Component {
       compostable: 0,
       recycle: 0,
       hazardous: 0,
+      throw: false,
     }
     this._changeLang = this._changeLang.bind(this)
     this._start = this._start.bind(this)
     this._showBinInfo = this._showBinInfo.bind(this)
     this._updateBinInfo = this._updateBinInfo.bind(this)
+    this._showThrow = this._showThrow.bind(this)
   }
 
   _updateBinInfo() {
@@ -120,6 +123,12 @@ export default class Main extends Component {
       })
     }
 
+  }
+  _showThrow(){
+    this.setState({
+      throw: !this.state.throw,
+    })
+    this._updateBinInfo()
   }
 
   render() {
@@ -211,7 +220,8 @@ export default class Main extends Component {
         <View style={styles.throwButton}>
           <Button
             color='#3d5afe'
-            title={this.state.lang.main.button.throw} />
+            title={this.state.lang.main.button.throw} 
+            onPress={() => {this._showThrow()}}/>
         </View>
 
         <Modal visible={this.state.binInfo}
@@ -224,6 +234,16 @@ export default class Main extends Component {
           <BinInfo
             name={this.state.binInfoName}
           />
+        </Modal>
+
+        <Modal visible={this.state.throw}
+          onRequestClose={() => {
+            this.setState({ throw: false })
+            this._updateBinInfo()
+          }}
+          animationType={"slide"}
+        >
+          <TrashList func={this._showThrow.bind(this)}/>
         </Modal>
 
       </ScrollView>
