@@ -404,7 +404,7 @@ export default class TrashList extends Component {
           onRequestClose={() => {
             this.setState({ throw: false })
           }}
-          animationType={"slide"}
+          animationType={"fade"}
         >
           <Throw lang={this.props.lang} name={this.state.name} num={this.state.num} func={this._throwVisible.bind(this)} func2={this._backThrow.bind(this)}/>
         </Modal>

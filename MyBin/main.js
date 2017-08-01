@@ -10,6 +10,7 @@ import {
   Navigator,
   Modal,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import EN from './Lang_EN.json';
 import TH from './Lang_TH.json';
@@ -164,11 +165,13 @@ export default class Main extends Component {
               <Text style={styles.text}>
                 {this.state.lang.main.text.general}
               </Text>
+               <TouchableOpacity onPress={() => { this._showBinInfo('general') }}>  
               <Image
                 style={styles.imgBin}
                 source={require('./images/bin/general.png')}>
                 <Text style={styles.textInsideBin}>{this.state.general}</Text>
               </Image>
+              </TouchableOpacity>
               <Button
                 color='#ee3582'
                 title={this.state.lang.main.button.info}
@@ -176,29 +179,34 @@ export default class Main extends Component {
               />
             </View>
             <View style={styles.bin}>
-              <Text style={styles.text}>
-                {this.state.lang.main.text.compostable}
-              </Text>
-              <Image
-                style={styles.imgBin}
-                source={require('./images/bin/compostable.png')}>
-                <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
-              </Image>
-              <Button
-                color='#ee3582'
-                title={this.state.lang.main.button.info}
-                onPress={() => { this._showBinInfo('compostable') }}
-              />
+                <Text style={styles.text}>
+                  {this.state.lang.main.text.compostable}
+                </Text>
+              <TouchableOpacity onPress={() => { this._showBinInfo('compostable') }}>  
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/compostable.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
+                </Image>
+              </TouchableOpacity> 
+                <Button
+                  color='#ee3582'
+                  title={this.state.lang.main.button.info}
+                  onPress={() => { this._showBinInfo('compostable') }}
+                />
+             
             </View>
             <View style={styles.bin}>
               <Text style={styles.text}>
                 {this.state.lang.main.text.recycle}
               </Text>
+            <TouchableOpacity onPress={() => { this._showBinInfo('recycle') }}>  
               <Image
                 style={styles.imgBin}
                 source={require('./images/bin/recycle.png')}>
                 <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
               </Image>
+            </TouchableOpacity>
               <Button
                 color='#ee3582'
                 title={this.state.lang.main.button.info}
@@ -209,11 +217,13 @@ export default class Main extends Component {
               <Text style={styles.text}>
                 {this.state.lang.main.text.hazardous}
               </Text>
+            <TouchableOpacity onPress={() => { this._showBinInfo('hazardous') }}>  
               <Image
                 style={styles.imgBin}
                 source={require('./images/bin/hazardous.png')}>
                 <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
               </Image>
+            </TouchableOpacity>  
               <Button
                 color='#ee3582'
                 title={this.state.lang.main.button.info}
@@ -235,7 +245,7 @@ export default class Main extends Component {
             this.setState({ binInfo: false })
             this._updateBinInfo()
           }}
-          animationType={"slide"}
+          animationType={"fade"}
         >
           <BinInfo
             lang={this.state.lang} name={this.state.binInfoName} func={this._closeBinInfo.bind(this)}
@@ -247,7 +257,7 @@ export default class Main extends Component {
             this.setState({ throw: false })
             this._updateBinInfo()
           }}
-          animationType={"slide"}
+          animationType={"fade"}
         >
           <TrashList lang={this.state.lang} func={this._showThrow.bind(this)}/>
         </Modal>
