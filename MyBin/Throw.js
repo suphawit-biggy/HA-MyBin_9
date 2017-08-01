@@ -736,7 +736,7 @@ export default class BinInfo extends Component {
         })
       })
         .catch((error) => alert(error.message))
-    } else if (this.props.num == 11) {
+    } else if (this.props.num == 25) {
       //เลข 3 11 12 13 17 18 20 21 24 ไปหน้า throw - General
       //เลข 6 7 ไปหน้า throw - Compostable
       //เลข 1 2 8 10 15 16 19 23 25 ไปหน้า throw - Recycle
