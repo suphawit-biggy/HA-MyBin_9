@@ -9,11 +9,8 @@ import {
   Alert,
   TouchableHighlight
 } from 'react-native';
-import EN from './Lang_EN.json';
-import TH from './Lang_TH.json';
 var styles = require('./styles');
 
-var langCode = '@MyBin:Lang'
 
 var BinImg = React.createClass({
   render() {
@@ -52,110 +49,137 @@ var BinImg = React.createClass({
 export default class BinInfo extends Component {
   constructor() {
     super()
-    this._start()
     this.state = {
-      EN: true,
-      lang: EN,
       visible: false,
-      name :'',
     }
-    this._start = this._start.bind(this)
     this.throwIt = this.throwIt.bind(this)
     this._getItemName = this._getItemName.bind(this)
   }
 
-  async _start() {
-    const value = await AsyncStorage.getItem(langCode)
-    this._getItemName()
-    if (value !== null) {
-      if (value == '1') {
-        this.setState({
-          EN: false,
-          lang: EN
-        })
-      } else {
-        this.setState({
-          EN: true,
-          lang: TH
-        })
-      }
-    }
-    var temp = this.props.visible
-    this.setState({
-      visible: temp
-    })
-  }
+
   _getItemName(){
     if(this.props.num == 0){
-        this.setState({name: this.state.lang.waste.artistsMaterials})
+        return(
+          <Text>{this.props.lang.waste.artistsMaterials}</Text>
+        )
       }else if(this.props.num == 1){
-        this.setState({name: this.state.lang.waste.beverageCans})
+        return(
+          <Text>{this.props.lang.waste.beverageCans}</Text>
+        )
       }else if(this.props.num == 2){
-        this.setState({name: this.state.lang.waste.bottles})
+        return(
+          <Text>{this.props.lang.waste.bottles}</Text>
+        )
       }else if(this.props.num == 3){
-        this.setState({name: this.state.lang.waste.candyBags})
+        return(
+          <Text>{this.props.lang.waste.candyBags}</Text>
+        )
       }else if(this.props.num == 4){
-        this.setState({name: this.state.lang.waste.cosmetics})
+        return(
+          <Text>{this.props.lang.waste.cosmetics}</Text>
+        )
       }else if(this.props.num == 5){
-        this.setState({name: this.state.lang.waste.drugs})
+        return(
+          <Text>{this.props.lang.waste.drugs}</Text>
+        )
       }else if(this.props.num == 6){
-        this.setState({name: this.state.lang.waste.foodScraps})
+        return(
+          <Text>{this.props.lang.waste.foodScraps}</Text>
+        )
       }else if(this.props.num == 7){
-        this.setState({name: this.state.lang.waste.fruitPeels})
+        return(
+          <Text>{this.props.lang.waste.fruitPeels}</Text>
+        )
       }else if(this.props.num == 8){
-        this.setState({name: this.state.lang.waste.glasses})
+        return(
+          <Text>{this.props.lang.waste.glasses}</Text>
+        )
       }else if(this.props.num == 9){
-        this.setState({name: this.state.lang.waste.insecticides})
+        return(
+          <Text>{this.props.lang.waste.insecticides}</Text>
+        )
       }else if(this.props.num == 10){
-        this.setState({name: this.state.lang.waste.milkBottles})
+        return(
+          <Text>{this.props.lang.waste.milkBottles}</Text>
+        )
       }else if(this.props.num == 11){
-        this.setState({name: this.state.lang.waste.noodlesBags})
+        return(
+          <Text>{this.props.lang.waste.noodlesBags}</Text>
+        )
       }else if(this.props.num == 12){
-        this.setState({name: this.state.lang.waste.noodlesCups})
+        return(
+          <Text>{this.props.lang.waste.noodlesCups}</Text>
+        )
       }else if(this.props.num == 13){
-        this.setState({name: this.state.lang.waste.paperCups})
+        return(
+          <Text>{this.props.lang.waste.paperCups}</Text>
+        )
       }else if(this.props.num == 14){
-        this.setState({name: this.state.lang.waste.pesticides})
+        return(
+          <Text>{this.props.lang.waste.pesticides}</Text>
+        )
       }else if(this.props.num == 15){
-        this.setState({name: this.state.lang.waste.plasticBags})
+        return(
+          <Text>{this.props.lang.waste.plasticBags}</Text>
+        )
       }else if(this.props.num == 16){
-        this.setState({name: this.state.lang.waste.plasticBottles})
+        return(
+          <Text>{this.props.lang.waste.plasticBottles}</Text>
+        )
       }else if(this.props.num == 17){
-        this.setState({name: this.state.lang.waste.plasticFoodBags})
+        return(
+          <Text>{this.props.lang.waste.plasticFoodBags}</Text>
+        )
       }else if(this.props.num == 18){
-        this.setState({name: this.state.lang.waste.plasticFoodContainers})
+        return(
+          <Text>{this.props.lang.waste.plasticFoodContainers}</Text>
+        )
       }else if(this.props.num == 19){
-        this.setState({name: this.state.lang.waste.shatteredGlass})
+        return(
+          <Text>{this.props.lang.waste.shatteredGlass}</Text>
+        )
       }else if(this.props.num == 20){
-        this.setState({name: this.state.lang.waste.snackBags})
+        return(
+          <Text>{this.props.lang.waste.snackBags}</Text>
+        )
       }else if(this.props.num == 21){
-        this.setState({name: this.state.lang.waste.straw})
+        return(
+          <Text>{this.props.lang.waste.straw}</Text>
+        )
       }else if(this.props.num == 22){
-        this.setState({name: this.state.lang.waste.thinners})
+        return(
+          <Text>{this.props.lang.waste.thinners}</Text>
+        )
       }else if(this.props.num == 23){
-        this.setState({name: this.state.lang.waste.tinCans})
+        return(
+          <Text>{this.props.lang.waste.tinCans}</Text>
+        )
       }else if(this.props.num == 24){
-        this.setState({name: this.state.lang.waste.tissue})
-      }else if(this.props.num == 25){
-        this.setState({name: this.state.lang.waste.wastePaper})
+        return(
+          <Text>{this.props.lang.waste.tissue}</Text>
+        )
+      }else{
+        return(
+          <Text>{this.props.lang.waste.wastePaper}</Text>
+        )
       }
   }
   _getName() {
     if (this.props.name == 'general') {
       return (
-        <Text>{this.state.lang.main.text.general}</Text>
+        <Text>{this.props.lang.main.text.general}</Text>
       )
     } else if (this.props.name == 'compostable') {
       return (
-        <Text>{this.state.lang.main.text.compostable}</Text>
+        <Text>{this.props.lang.main.text.compostable}</Text>
       )
     } else if (this.props.name == 'recycle') {
       return (
-        <Text>{this.state.lang.main.text.recycle}</Text>
+        <Text>{this.props.lang.main.text.recycle}</Text>
       )
     } else if (this.props.name == 'hazardous') {
       return (
-        <Text>{this.state.lang.main.text.hazardous}</Text>
+        <Text>{this.props.lang.main.text.hazardous}</Text>
       )
     }
   }
@@ -163,19 +187,19 @@ export default class BinInfo extends Component {
   _getInfo() {
     if (this.props.name == 'general') {
       return (
-        <Text>{this.state.lang.main.text.generalInfo}</Text>
+        <Text>{this.props.lang.main.text.generalInfo}</Text>
       )
     } else if (this.props.name == 'compostable') {
       return (
-        <Text>{this.state.lang.main.text.compostableInfo}</Text>
+        <Text>{this.props.lang.main.text.compostableInfo}</Text>
       )
     } else if (this.props.name == 'recycle') {
       return (
-        <Text>{this.state.lang.main.text.recycleInfo}</Text>
+        <Text>{this.props.lang.main.text.recycleInfo}</Text>
       )
     } else if (this.props.name == 'hazardous') {
       return (
-        <Text>{this.state.lang.main.text.hazardousInfo}</Text>
+        <Text>{this.props.lang.main.text.hazardousInfo}</Text>
       )
     }
   }
@@ -197,19 +221,19 @@ export default class BinInfo extends Component {
   _getAmount() {
     if (this.props.name == 'general') {
       return (
-        <Text>{this.state.lang.main.text.general}</Text>
+        <Text>{this.props.lang.main.text.general}</Text>
       )
     } else if (this.props.name == 'compostable') {
       return (
-        <Text>{this.state.lang.main.text.compostable}</Text>
+        <Text>{this.props.lang.main.text.compostable}</Text>
       )
     } else if (this.props.name == 'recycle') {
       return (
-        <Text>{this.state.lang.main.text.recycle}</Text>
+        <Text>{this.props.lang.main.text.recycle}</Text>
       )
     } else if (this.props.name == 'hazardous') {
       return (
-        <Text>{this.state.lang.main.text.hazardous}</Text>
+        <Text>{this.props.lang.main.text.hazardous}</Text>
       )
     }
   }
@@ -775,7 +799,7 @@ export default class BinInfo extends Component {
                 source={require('./images/Button/back.png')}/>
             </TouchableHighlight>
               <Text style={styles.topTitleText}>
-              {this.state.name}
+              {this._getItemName()}
               </Text>
           </View>
         </View>
@@ -786,7 +810,7 @@ export default class BinInfo extends Component {
               <Text>
                 {this._getAmount()}
               </Text>
-              <BinImg name={this.props.name} />
+              <BinImg lang={this.props.lang} name={this.props.name} />
             </View>
             <View style={[styles.bin, { margin: 15, borderWidth: 2, borderRadius: 10 , borderColor:'#ffA500'}]}>
               <Text style={[styles.text, { margin: 10 }]}>
@@ -799,13 +823,13 @@ export default class BinInfo extends Component {
         <View style={styles.throwButton}>
           <Button
             color='#3d5afe'
-            title={this.state.lang.throw.button.throwIt}
+            title={this.props.lang.throw.button.throwIt}
             onPress={() => Alert.alert(
-              this.state.lang.comfirmPopUp.text.comfirmation,
-              this.state.lang.comfirmPopUp.text.ruSure,
+              this.props.lang.comfirmPopUp.text.comfirmation,
+              this.props.lang.comfirmPopUp.text.ruSure,
               [
-                { text: this.state.lang.comfirmPopUp.button.yes, onPress: () => this.throwIt() },
-                { text: this.state.lang.comfirmPopUp.button.no, onPress: () => console.log('Cancel Pressed') },
+                { text: this.props.lang.comfirmPopUp.button.yes, onPress: () => this.throwIt() },
+                { text: this.props.lang.comfirmPopUp.button.no, onPress: () => console.log('Cancel Pressed') },
               ],
               { cancelable: false }
             )}

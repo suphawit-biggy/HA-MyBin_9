@@ -9,62 +9,21 @@ import {
   ScrollView,
   TouchableHighlight,
 } from 'react-native';
-import EN from './Lang_EN.json';
-import TH from './Lang_TH.json';
 import Throw from './Throw';
 
 var styles = require('./styles');
 
-var langCode = '@MyBin:Lang'
 export default class TrashList extends Component {
   constructor() {
     super()
-    this._start()
     this.state = {
-      EN: true,
-      lang: EN,
       throw: false,
       name: '',
       num: 0,
     }
-    this._changeLang = this._changeLang.bind(this)
-    this._start = this._start.bind(this)
     this._throwVisible = this._throwVisible
   }
 
-  async _start() {
-    const value = await AsyncStorage.getItem(langCode)
-    if (value !== null) {
-      if (value == '1') {
-        this.setState({
-          EN: false,
-          lang: EN
-        })
-      } else {
-        this.setState({
-          EN: true,
-          lang: TH
-        })
-      }
-    }
-  }
-
-  async _changeLang() {
-    this.setState({
-      EN: !this.state.EN,
-    })
-    if (this.state.EN) {
-      await AsyncStorage.setItem(langCode, '1')
-      this.setState({
-        lang: EN
-      })
-    } else {
-      await AsyncStorage.setItem(langCode, '0')
-      this.setState({
-        lang: TH
-      })
-    }
-  }
 
   _handleTouch(trashNumber) {
     //เลข 3 11 12 13 17 18 20 21 24 ไปหน้า throw - General
@@ -115,7 +74,7 @@ export default class TrashList extends Component {
               source={require('./images/Button/back.png')}/>
             </TouchableHighlight>
             <Text style={styles.topTitleText}>
-              {this.state.lang.main.text.waste}
+              {this.props.lang.main.text.waste}
             </Text>
           </View>
         </View>
@@ -126,7 +85,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/artistsMaterials.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.artistsMaterials}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.artistsMaterials}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -137,7 +96,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/beverageCans.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.beverageCans}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.beverageCans}</Text>
               </View>
           </View>
         </TouchableHighlight>
@@ -148,7 +107,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/bottles.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.bottles}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.bottles}</Text>
               
             </View>
           </View>
@@ -160,7 +119,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/candyBags.png')}>
             </Image>
             <View style={styles.wasteItem}>
-               <Text style={styles.text}>{this.state.lang.waste.candyBags}</Text>
+               <Text style={styles.text}>{this.props.lang.waste.candyBags}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -171,7 +130,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/cosmetics.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.cosmetics}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.cosmetics}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -182,7 +141,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/drugs.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.drugs}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.drugs}</Text>
             </View>
           </View>
         </TouchableHighlight>  
@@ -193,7 +152,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/foodScraps.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.foodScraps}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.foodScraps}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -204,7 +163,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/fruitPeels.png')}>
             </Image>
             <View style={styles.wasteItem}>             
-                <Text style={styles.text}>{this.state.lang.waste.fruitPeels}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.fruitPeels}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -216,7 +175,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.glasses}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.glasses}</Text>
              
             </View>
           </View> 
@@ -228,7 +187,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/insecticides.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.insecticides}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.insecticides}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -240,7 +199,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.milkBottles}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.milkBottles}</Text>
               
             </View>
           </View>
@@ -253,7 +212,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.noodlesBags}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.noodlesBags}</Text>
            
             </View>
           </View>
@@ -266,7 +225,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.noodlesCups}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.noodlesCups}</Text>
               
             </View>
           </View>
@@ -278,7 +237,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/paperCups.png')}>
             </Image>
             <View style={styles.wasteItem}>
-                <Text style={styles.text}>{this.state.lang.waste.paperCups}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.paperCups}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -290,7 +249,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.pesticides}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.pesticides}</Text>
     
             </View>
           </View>
@@ -303,7 +262,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
   
-                <Text style={styles.text}>{this.state.lang.waste.plasticBags}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.plasticBags}</Text>
               
             </View>
           </View>
@@ -316,7 +275,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.plasticBottles}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.plasticBottles}</Text>
               
             </View>
           </View>
@@ -329,7 +288,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.plasticFoodBags}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.plasticFoodBags}</Text>
               
             </View>
           </View>
@@ -342,7 +301,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.plasticFoodContainers}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.plasticFoodContainers}</Text>
               
             </View>
           </View>
@@ -355,7 +314,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.shatteredGlass}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.shatteredGlass}</Text>
               
             </View>
           </View>
@@ -368,7 +327,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
              
-                <Text style={styles.text}>{this.state.lang.waste.snackBags}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.snackBags}</Text>
          
             </View>
           </View>
@@ -381,7 +340,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.straw}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.straw}</Text>
             
             </View>
           </View>
@@ -394,7 +353,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.thinners}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.thinners}</Text>
               
             </View>
           </View>
@@ -407,7 +366,7 @@ export default class TrashList extends Component {
             </Image>
             <View style={styles.wasteItem}>
               
-                <Text style={styles.text}>{this.state.lang.waste.tinCans}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.tinCans}</Text>
            
             </View>
           </View>
@@ -419,7 +378,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/tissue.png')}>
             </Image>
             <View style={styles.wasteItem}> 
-             <Text style={styles.text}>{this.state.lang.waste.tissue}</Text>
+             <Text style={styles.text}>{this.props.lang.waste.tissue}</Text>
             </View>
           </View>
          </TouchableHighlight>  
@@ -430,7 +389,7 @@ export default class TrashList extends Component {
               source={require('./images/waste/wastePaper.png')}>
             </Image>
             <View style={styles.wasteItem}>            
-                <Text style={styles.text}>{this.state.lang.waste.wastePaper}</Text>
+                <Text style={styles.text}>{this.props.lang.waste.wastePaper}</Text>
             </View>
           </View>
          </TouchableHighlight> 
@@ -440,7 +399,7 @@ export default class TrashList extends Component {
           }}
           animationType={"slide"}
         >
-          <Throw name={this.state.name} num={this.state.num} func={this._throwVisible.bind(this)}/>
+          <Throw lang={this.props.lang} name={this.state.name} num={this.state.num} func={this._throwVisible.bind(this)}/>
         </Modal>
       </ScrollView>
     )

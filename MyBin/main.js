@@ -238,7 +238,7 @@ export default class Main extends Component {
           animationType={"slide"}
         >
           <BinInfo
-            name={this.state.binInfoName} func={this._closeBinInfo.bind(this)}
+            lang={this.state.lang} name={this.state.binInfoName} func={this._closeBinInfo.bind(this)}
           />
         </Modal>
 
@@ -249,7 +249,7 @@ export default class Main extends Component {
           }}
           animationType={"slide"}
         >
-          <TrashList func={this._showThrow.bind(this)}/>
+          <TrashList lang={this.state.lang} func={this._showThrow.bind(this)}/>
         </Modal>
 
       </ScrollView>

@@ -9,11 +9,8 @@ import {
   ScrollView,
   TouchableHighlight,
 } from 'react-native';
-import EN from './Lang_EN.json';
-import TH from './Lang_TH.json';
 var styles = require('./styles');
 
-var langCode = '@MyBin:Lang'
 var BinImg = React.createClass({
   getInitialState() {
     return {
@@ -197,72 +194,48 @@ var ItemList = React.createClass({
 export default class BinInfo extends Component {
   constructor() {
     super()
-    this._start()
     this.state = {
-      EN: true,
-      lang: EN,
       visible: false,
       curCount: 0,
     }
-    this._start = this._start.bind(this)
   }
 
-  async _start() {
-    const value = await AsyncStorage.getItem(langCode)
-    if (value !== null) {
-      if (value == '1') {
-        this.setState({
-          EN: false,
-          lang: EN
-        })
-      } else {
-        this.setState({
-          EN: true,
-          lang: TH
-        })
-      }
-    }
-    var temp = this.props.visible
-    this.setState({
-      visible: temp
-    })
-  }
 
   _getName() {
     if (this.props.name == 'general') {
       return (
-        <Text>{this.state.lang.main.text.general}</Text>
+        <Text>{this.props.lang.main.text.general}</Text>
       )
     } else if (this.props.name == 'compostable') {
       return (
-        <Text>{this.state.lang.main.text.compostable}</Text>
+        <Text>{this.props.lang.main.text.compostable}</Text>
       )
     } else if (this.props.name == 'recycle') {
       return (
-        <Text>{this.state.lang.main.text.recycle}</Text>
+        <Text>{this.props.lang.main.text.recycle}</Text>
       )
     } else if (this.props.name == 'hazardous') {
       return (
-        <Text>{this.state.lang.main.text.hazardous}</Text>
+        <Text>{this.props.lang.main.text.hazardous}</Text>
       )
     }
   }
   _getInfo() {
     if (this.props.name == 'general') {
       return (
-        <Text>{this.state.lang.main.text.generalInfo}</Text>
+        <Text>{this.props.lang.main.text.generalInfo}</Text>
       )
     } else if (this.props.name == 'compostable') {
       return (
-        <Text>{this.state.lang.main.text.compostableInfo}</Text>
+        <Text>{this.props.lang.main.text.compostableInfo}</Text>
       )
     } else if (this.props.name == 'recycle') {
       return (
-        <Text>{this.state.lang.main.text.recycleInfo}</Text>
+        <Text>{this.props.lang.main.text.recycleInfo}</Text>
       )
     } else if (this.props.name == 'hazardous') {
       return (
-        <Text>{this.state.lang.main.text.hazardousInfo}</Text>
+        <Text>{this.props.lang.main.text.hazardousInfo}</Text>
       )
     }
   }
@@ -296,7 +269,7 @@ export default class BinInfo extends Component {
           </View>
         </View>
         <View style={styles.wasteTable}>
-          <ItemList name={this.props.name} lang={this.state.lang} />
+          <ItemList name={this.props.name} lang={this.props.lang} />
         </View>
       </ScrollView>
     )
