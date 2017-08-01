@@ -86,7 +86,7 @@ export default class TrashList extends Component {
       })
     }else if(trashNumber == 1||trashNumber == 2||trashNumber == 8||trashNumber == 10||trashNumber == 15||trashNumber == 16||trashNumber == 19||trashNumber == 23||trashNumber == 25){
       this.setState({
-        name:'compostable',
+        name:'recycle',
         throw: true,
       })
     }else{

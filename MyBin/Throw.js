@@ -144,7 +144,7 @@ export default class BinInfo extends Component {
   _getAmount() {
     if (this.props.name == 'general') {
       return (
-        <Text>{this.state.lang.main.text.compostable}</Text>
+        <Text>{this.state.lang.main.text.general}</Text>
       )
     } else if (this.props.name == 'compostable') {
       return (
