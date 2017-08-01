@@ -126,13 +126,13 @@ export default class Main extends Component {
     }
 
   }
-  _showThrow(){
+  _showThrow() {
     this.setState({
       throw: !this.state.throw,
     })
     this._updateBinInfo()
   }
-  _closeBinInfo(){
+  _closeBinInfo() {
     this.setState({
       binInfo: false,
     })
@@ -165,12 +165,12 @@ export default class Main extends Component {
               <Text style={styles.text}>
                 {this.state.lang.main.text.general}
               </Text>
-               <TouchableOpacity onPress={() => { this._showBinInfo('general') }}>  
-              <Image
-                style={styles.imgBin}
-                source={require('./images/bin/general.png')}>
-                <Text style={styles.textInsideBin}>{this.state.general}</Text>
-              </Image>
+              <TouchableOpacity onPress={() => { this._showBinInfo('general') }}>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/general.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.general}</Text>
+                </Image>
               </TouchableOpacity>
               <Button
                 color='#ee3582'
@@ -179,34 +179,34 @@ export default class Main extends Component {
               />
             </View>
             <View style={styles.bin}>
-                <Text style={styles.text}>
-                  {this.state.lang.main.text.compostable}
-                </Text>
-              <TouchableOpacity onPress={() => { this._showBinInfo('compostable') }}>  
+              <Text style={styles.text}>
+                {this.state.lang.main.text.compostable}
+              </Text>
+              <TouchableOpacity onPress={() => { this._showBinInfo('compostable') }}>
                 <Image
                   style={styles.imgBin}
                   source={require('./images/bin/compostable.png')}>
                   <Text style={styles.textInsideBin}>{this.state.compostable}</Text>
                 </Image>
-              </TouchableOpacity> 
-                <Button
-                  color='#ee3582'
-                  title={this.state.lang.main.button.info}
-                  onPress={() => { this._showBinInfo('compostable') }}
-                />
-             
+              </TouchableOpacity>
+              <Button
+                color='#ee3582'
+                title={this.state.lang.main.button.info}
+                onPress={() => { this._showBinInfo('compostable') }}
+              />
+
             </View>
             <View style={styles.bin}>
               <Text style={styles.text}>
                 {this.state.lang.main.text.recycle}
               </Text>
-            <TouchableOpacity onPress={() => { this._showBinInfo('recycle') }}>  
-              <Image
-                style={styles.imgBin}
-                source={require('./images/bin/recycle.png')}>
-                <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
-              </Image>
-            </TouchableOpacity>
+              <TouchableOpacity onPress={() => { this._showBinInfo('recycle') }}>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/recycle.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.recycle}</Text>
+                </Image>
+              </TouchableOpacity>
               <Button
                 color='#ee3582'
                 title={this.state.lang.main.button.info}
@@ -217,13 +217,13 @@ export default class Main extends Component {
               <Text style={styles.text}>
                 {this.state.lang.main.text.hazardous}
               </Text>
-            <TouchableOpacity onPress={() => { this._showBinInfo('hazardous') }}>  
-              <Image
-                style={styles.imgBin}
-                source={require('./images/bin/hazardous.png')}>
-                <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
-              </Image>
-            </TouchableOpacity>  
+              <TouchableOpacity onPress={() => { this._showBinInfo('hazardous') }}>
+                <Image
+                  style={styles.imgBin}
+                  source={require('./images/bin/hazardous.png')}>
+                  <Text style={styles.textInsideBin}>{this.state.hazardous}</Text>
+                </Image>
+              </TouchableOpacity>
               <Button
                 color='#ee3582'
                 title={this.state.lang.main.button.info}
@@ -236,8 +236,8 @@ export default class Main extends Component {
         <View style={styles.throwButton}>
           <Button
             color='#3d5afe'
-            title={this.state.lang.main.button.throw} 
-            onPress={() => {this._showThrow()}}/>
+            title={this.state.lang.main.button.throw}
+            onPress={() => { this._showThrow() }} />
         </View>
 
         <Modal visible={this.state.binInfo}
@@ -259,7 +259,7 @@ export default class Main extends Component {
           }}
           animationType={"fade"}
         >
-          <TrashList lang={this.state.lang} func={this._showThrow.bind(this)}/>
+          <TrashList lang={this.state.lang} func={this._showThrow.bind(this)} />
         </Modal>
 
       </ScrollView>

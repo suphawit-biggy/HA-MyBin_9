@@ -30,11 +30,11 @@ module.exports = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
-  backButton:{
-    width:40,
-    height:40,
-    marginTop : 10,
-    alignItems : 'center'
+  backButton: {
+    width: 40,
+    height: 40,
+    marginTop: 10,
+    alignItems: 'center'
   },
   TitleRow: {
     flex: 1,
@@ -47,7 +47,7 @@ module.exports = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 28,
     color: 'white',
-    marginTop : 10 
+    marginTop: 10
   },
   upperContent: {
     margin: 5,
@@ -110,11 +110,19 @@ module.exports = StyleSheet.create({
   wastePic: {
     width: 50,
     height: 50,
-    flexDirection: 'column'
   },
   wasteItem: {
     paddingLeft: 20,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  binInfoWasteList: {
+    flexDirection: 'row'
+  },
+  binInfoWastePic: {
+    width: 15,
+    height: 15,
+    marginTop: 2,
+    marginRight: 5,
   }
 });

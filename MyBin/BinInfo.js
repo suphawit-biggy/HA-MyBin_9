@@ -145,52 +145,209 @@ var ItemList = React.createClass({
     if (this.props.name == 'general') {
       return (
         <View>
-          <Text>{this.props.lang.waste.plasticFoodBags} : {this.state.plasticFoodBags}</Text>
-          <Text>{this.props.lang.waste.plasticFoodContainers} : {this.state.plasticFoodContainers}</Text>
-          <Text>{this.props.lang.waste.straw} : {this.state.straw}</Text>
-          <Text>{this.props.lang.waste.snackBags} : {this.state.snackBags}</Text>
-          <Text>{this.props.lang.waste.candyBags} : {this.state.candyBags}</Text>
-          <Text>{this.props.lang.waste.noodlesBags} : {this.state.noodlesBags}</Text>
-          <Text>{this.props.lang.waste.noodlesCups} : {this.state.noodlesCups}</Text>
-          <Text>{this.props.lang.waste.tissue} : {this.state.tissue}</Text>
-          <Text>{this.props.lang.waste.paperCups} : {this.state.paperCups}</Text>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/plasticFoodBags.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.plasticFoodBags} : {this.state.plasticFoodBags}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/plasticFoodContainers.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.plasticFoodContainers} : {this.state.plasticFoodContainers}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/straw.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.straw} : {this.state.straw}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/snackBags.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.snackBags} : {this.state.snackBags}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/candyBags.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.candyBags} : {this.state.candyBags}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/noodlesBags.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.noodlesBags} : {this.state.noodlesBags}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/noodlesCups.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.noodlesCups} : {this.state.noodlesCups}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/tissue.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.tissue} : {this.state.tissue}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/paperCups.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.paperCups} : {this.state.paperCups}</Text>
+          </View>
         </View>
       )
     } else if (this.props.name == 'compostable') {
       return (
         <View>
-          <Text>{this.props.lang.waste.foodScraps} : {this.state.foodScraps}</Text>
-          <Text>{this.props.lang.waste.fruitPeels} : {this.state.fruitPeels}</Text>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/foodScraps.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.foodScraps} : {this.state.foodScraps}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/fruitPeels.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.fruitPeels} : {this.state.fruitPeels}</Text>
+          </View>
         </View>
       )
     } else if (this.props.name == 'recycle') {
       return (
         <View>
-          <Text>{this.props.lang.waste.bottles} : {this.state.bottles}</Text>
-          <Text>{this.props.lang.waste.plasticBottles} : {this.state.plasticBottles}</Text>
-          <Text>{this.props.lang.waste.milkBottles} : {this.state.milkBottles}</Text>
-          <Text>{this.props.lang.waste.glasses} : {this.state.glasses}</Text>
-          <Text>{this.props.lang.waste.shatteredGlass} : {this.state.shatteredGlass}</Text>
-          <Text>{this.props.lang.waste.tinCans} : {this.state.tinCans}</Text>
-          <Text>{this.props.lang.waste.beverageCans} : {this.state.beverageCans}</Text>
-          <Text>{this.props.lang.waste.wastePaper} : {this.state.wastePaper}</Text>
-          <Text>{this.props.lang.waste.plasticBags} : {this.state.plasticBags}</Text>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/bottles.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.bottles} : {this.state.bottles}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/plasticBottles.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.plasticBottles} : {this.state.plasticBottles}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/milkBottles.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.milkBottles} : {this.state.milkBottles}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/glasses.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.glasses} : {this.state.glasses}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/shatteredGlass.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.shatteredGlass} : {this.state.shatteredGlass}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/tinCans.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.tinCans} : {this.state.tinCans}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/beverageCans.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.beverageCans} : {this.state.beverageCans}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/wastePaper.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.wastePaper} : {this.state.wastePaper}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/plasticBags.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.plasticBags} : {this.state.plasticBags}</Text>
+          </View>
         </View>
       )
     } else {
       return (
         <View>
-          <Text>{this.props.lang.waste.insecticides} : {this.state.insecticides}</Text>
-          <Text>{this.props.lang.waste.pesticides} : {this.state.pesticides}</Text>
-          <Text>{this.props.lang.waste.thinners} : {this.state.thinners}</Text>
-          <Text>{this.props.lang.waste.drugs} : {this.state.drugs}</Text>
-          <Text>{this.props.lang.waste.artistsMaterials} : {this.state.artistsMaterials}</Text>
-          <Text>{this.props.lang.waste.cosmetics} : {this.state.cosmetics}</Text>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/insecticides.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.insecticides} : {this.state.insecticides}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/pesticides.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.pesticides} : {this.state.pesticides}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/thinners.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.thinners} : {this.state.thinners}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/drugs.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.drugs} : {this.state.drugs}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/artistsMaterials.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.artistsMaterials} : {this.state.artistsMaterials}</Text>
+          </View>
+          <View style={styles.binInfoWasteList}>
+            <Image
+              style={styles.binInfoWastePic}
+              source={require('./images/waste/cosmetics.png')}>
+            </Image>
+            <Text>{this.props.lang.waste.cosmetics} : {this.state.cosmetics}</Text>
+          </View>
         </View>
       )
     }
   }
 })
+
 export default class BinInfo extends Component {
   constructor() {
     super()
@@ -246,10 +403,10 @@ export default class BinInfo extends Component {
         <View style={styles.languageRow}>
           <View style={styles.TitleRow}>
             <TouchableHighlight
-            onPress={() => this.props.func()}>
-              <Image 
-              style={styles.backButton}
-              source={require('./images/Button/back.png')}/>
+              onPress={() => this.props.func()}>
+              <Image
+                style={styles.backButton}
+                source={require('./images/Button/back.png')} />
             </TouchableHighlight>
             <Text style={styles.topTitleText}>
               {this._getName()}
