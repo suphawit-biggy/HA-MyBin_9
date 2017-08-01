@@ -272,6 +272,12 @@ export default class BinInfo extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.languageRow}>
           <View style={styles.TitleRow}>
+            <TouchableHighlight
+            onPress={() => this.props.func()}>
+              <Image 
+              style={styles.backButton}
+              source={require('./images/Button/back.png')}/>
+            </TouchableHighlight>
             <Text style={styles.topTitleText}>
               {this._getName()}
             </Text>

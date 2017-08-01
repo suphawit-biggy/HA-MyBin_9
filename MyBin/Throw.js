@@ -6,7 +6,8 @@ import {
   Image,
   AsyncStorage,
   ListView,
-  Alert
+  Alert,
+  TouchableHighlight
 } from 'react-native';
 import EN from './Lang_EN.json';
 import TH from './Lang_TH.json';
@@ -56,14 +57,16 @@ export default class BinInfo extends Component {
       EN: true,
       lang: EN,
       visible: false,
-      name :'AA',
+      name :'',
     }
     this._start = this._start.bind(this)
     this.throwIt = this.throwIt.bind(this)
+    this._getItemName = this._getItemName.bind(this)
   }
 
   async _start() {
     const value = await AsyncStorage.getItem(langCode)
+    this._getItemName()
     if (value !== null) {
       if (value == '1') {
         this.setState({
@@ -76,7 +79,14 @@ export default class BinInfo extends Component {
           lang: TH
         })
       }
-      if(this.props.num == 0){
+    }
+    var temp = this.props.visible
+    this.setState({
+      visible: temp
+    })
+  }
+  _getItemName(){
+    if(this.props.num == 0){
         this.setState({name: this.state.lang.waste.artistsMaterials})
       }else if(this.props.num == 1){
         this.setState({name: this.state.lang.waste.beverageCans})
@@ -129,13 +139,7 @@ export default class BinInfo extends Component {
       }else if(this.props.num == 25){
         this.setState({name: this.state.lang.waste.wastePaper})
       }
-    }
-    var temp = this.props.visible
-    this.setState({
-      visible: temp
-    })
   }
-
   _getName() {
     if (this.props.name == 'general') {
       return (
@@ -764,9 +768,15 @@ export default class BinInfo extends Component {
       <View style={styles.container}>
         <View style={styles.languageRow}>
           <View style={styles.TitleRow}>
-            <Text style={styles.topTitleText}>
+            <TouchableHighlight
+            onPress={() => this.props.func()}>
+                <Image 
+                style={styles.backButton}
+                source={require('./images/Button/back.png')}/>
+            </TouchableHighlight>
+              <Text style={styles.topTitleText}>
               {this.state.name}
-            </Text>
+              </Text>
           </View>
         </View>
 

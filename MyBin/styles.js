@@ -30,17 +30,24 @@ module.exports = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
+  backButton:{
+    width:40,
+    height:40,
+    marginTop : 10,
+    alignItems : 'center'
+  },
   TitleRow: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'flex-start',
-    justifyContent: 'center',
     paddingLeft: 10,
     height: 60,
   },
   topTitleText: {
     fontFamily: 'Arial',
     fontSize: 28,
-    color: 'white'
+    color: 'white',
+    marginTop : 10 
   },
   upperContent: {
     margin: 5,

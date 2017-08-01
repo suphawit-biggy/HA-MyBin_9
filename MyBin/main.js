@@ -39,6 +39,7 @@ export default class Main extends Component {
     this._showBinInfo = this._showBinInfo.bind(this)
     this._updateBinInfo = this._updateBinInfo.bind(this)
     this._showThrow = this._showThrow.bind(this)
+    this._closeBinInfo = this._closeBinInfo.bind(this)
   }
 
   _updateBinInfo() {
@@ -129,6 +130,11 @@ export default class Main extends Component {
       throw: !this.state.throw,
     })
     this._updateBinInfo()
+  }
+  _closeBinInfo(){
+    this.setState({
+      binInfo: false,
+    })
   }
 
   render() {
@@ -232,7 +238,7 @@ export default class Main extends Component {
           animationType={"slide"}
         >
           <BinInfo
-            name={this.state.binInfoName}
+            name={this.state.binInfoName} func={this._closeBinInfo.bind(this)}
           />
         </Modal>
 
