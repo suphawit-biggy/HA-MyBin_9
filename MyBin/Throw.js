@@ -793,7 +793,7 @@ export default class BinInfo extends Component {
         <View style={styles.languageRow}>
           <View style={styles.TitleRow}>
             <TouchableHighlight
-            onPress={() => this.props.func()}>
+            onPress={() => this.props.func2()}>
                 <Image 
                 style={styles.backButton}
                 source={require('./images/Button/back.png')}/>

@@ -21,7 +21,8 @@ export default class TrashList extends Component {
       name: '',
       num: 0,
     }
-    this._throwVisible = this._throwVisible
+    this._throwVisible = this._throwVisible.bind(this)
+    this._backThrow = this._backThrow.bind(this)
   }
 
 
@@ -60,6 +61,12 @@ export default class TrashList extends Component {
       throw: !this.state.throw,
     })
     this.props.func()
+  }
+  
+  _backThrow(){
+    this.setState({
+      throw:!this.state.throw,
+    })
   }
 
   render() {
@@ -399,7 +406,7 @@ export default class TrashList extends Component {
           }}
           animationType={"slide"}
         >
-          <Throw lang={this.props.lang} name={this.state.name} num={this.state.num} func={this._throwVisible.bind(this)}/>
+          <Throw lang={this.props.lang} name={this.state.name} num={this.state.num} func={this._throwVisible.bind(this)} func2={this._backThrow.bind(this)}/>
         </Modal>
       </ScrollView>
     )
